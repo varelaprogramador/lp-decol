@@ -239,9 +239,13 @@ export default function DecolDesignVSL() {
       <header className="py-3 sm:py-4 px-4 bg-black border-b border-gold-400/20">
         <div className="container mx-auto max-w-6xl">
           <div className="flex justify-between items-center">
-            <h1 className="text-lg sm:text-xl font-bold text-gold-400">
-              DECOL DESIGN
-            </h1>
+            <Image
+              src={"/logo.png"}
+              width={400}
+              height={200}
+              className=""
+              alt={"logo"}
+            ></Image>
             <div className="flex items-center gap-2 sm:gap-4">
               <div className="flex items-center gap-1 sm:gap-2 bg-gold-400/10 px-2 sm:px-4 py-1 sm:py-2 rounded-md">
                 <Clock className="h-3 w-3 sm:h-4 sm:w-4 text-gold-400" />
@@ -731,10 +735,6 @@ export default function DecolDesignVSL() {
               <span className="text-gold-400">EXCLUSIVAMENTE</span> para o
               <span className="text-gold-400"> GRUPO.</span>
             </h2>
-            <p className="text-base sm:text-xl text-gray-300 mb-6 sm:mb-8 max-w-2xl mx-auto">
-              Entre para o Grupo VIP da DECOL DESIGN hoje e tenha acesso a
-              ofertas exclusivas que não estão disponíveis para o público geral
-            </p>
 
             <div className="bg-black/50 backdrop-blur-sm border border-gold-400 rounded-xl p-4 sm:p-8 mb-6 sm:mb-8">
               <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 justify-center">
