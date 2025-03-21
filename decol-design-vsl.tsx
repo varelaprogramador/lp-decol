@@ -272,14 +272,12 @@ export default function DecolDesignVSL() {
           <div className="container mx-auto max-w-5xl px-4 sm:px-6">
             <div className="text-center mb-6 sm:mb-8">
               <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold mb-3 sm:mb-4 leading-tight">
-                <span className="text-gold-400">ACESSO EXCLUSIVO:</span>{" "}
-                Descubra Os Segredos De Decoração Que Apenas Os Milionários De
-                Londrina Conhecem
+                <span className="text-gold-400">PARTICIPE: </span> clube de
+                ofertas “Loja dos Famosos” e tenha acesso a OFERTAS EXCLUSIVAS
               </h1>
               <p className="text-base sm:text-xl text-gray-300 max-w-3xl mx-auto">
-                Entre para o nosso Grupo VIP e tenha acesso a ofertas
-                imperdíveis que transformarão sua casa em um ambiente digno de
-                revista
+                Entre no Grupo Vip e tenha a oportunidade de comprar moveis de
+                alto padrão a valores de ocasião.
               </p>
             </div>
 
@@ -741,8 +739,10 @@ export default function DecolDesignVSL() {
 
           <div className="container mx-auto max-w-4xl px-4 sm:px-6 relative z-10 text-center">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6">
-              Transforme Sua Casa Com Os{" "}
-              <span className="text-gold-400">Segredos Dos Milionários</span>
+              Entre para o Grupo VIP da Decol Design hoje e tenho acesso a
+              ofertas especiais que estão disponíveis{" "}
+              <span className="text-gold-400">EXCLUSIVAMENTE</span> para o
+              <span className="text-gold-400"> GRUPO.</span>
             </h2>
             <p className="text-base sm:text-xl text-gray-300 mb-6 sm:mb-8 max-w-2xl mx-auto">
               Entre para o Grupo VIP da DECOL DESIGN hoje e tenha acesso a
