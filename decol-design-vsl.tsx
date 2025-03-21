@@ -652,51 +652,51 @@ export default function DecolDesignVSL() {
           <div className="container mx-auto max-w-4xl px-4 sm:px-6">
             <div className="text-center mb-10">
               <h2 className="text-2xl md:text-3xl font-bold mb-4">
-                Perguntas Frequentes
+                Como funciona as ofertas do Grupo VIP
               </h2>
               <p className="text-gray-300">
-                Tire suas dúvidas sobre nossos serviços e como podemos ajudar
-                você
+                *Ofertas tem validade de tempo ou quantidade, estarao
+                descriminadas na oferta.
               </p>
             </div>
 
             <div className="space-y-6">
               <div className="bg-gray-900/30 p-6 rounded-xl border border-gray-800">
                 <h3 className="text-lg font-bold mb-3">
-                  Como funciona a consulta inicial?
+                  Como faço para aproveitar e comprar as ofertas do grupo vip?
                 </h3>
                 <p className="text-gray-300">
-                  A consulta inicial tem duração de aproximadamente 1 hora, onde
-                  nossos designers irão entender suas necessidades, preferências
-                  e estilo de vida. Após essa etapa, desenvolvemos um briefing
-                  detalhado para iniciar o projeto.
+                  para efetivar sua compra é necessario envio dos dados basicos
+                  como NOME, CPF, ENDEREÇO , TELEFONE com o pagamento. Apos é
+                  feito contrato de compra e enviado ao cliente.
                 </p>
               </div>
 
               <div className="bg-gray-900/30 p-6 rounded-xl border border-gray-800">
                 <h3 className="text-lg font-bold mb-3">
-                  Quanto tempo leva para desenvolver um projeto completo?
+                  Quais sao as formas de pagamento?{" "}
                 </h3>
                 <p className="text-gray-300">
-                  O tempo de desenvolvimento varia de acordo com a complexidade
-                  e tamanho do projeto. Em média, projetos residenciais levam de
-                  30 a 60 dias para serem finalizados, incluindo todas as etapas
-                  de desenvolvimento e ajustes.
+                  Pagamento das ofertas especiais, sao via PIX ou link de
+                  pagamento como parcelamento em ate 12x cartao.
                 </p>
               </div>
 
               <div className="bg-gray-900/30 p-6 rounded-xl border border-gray-800">
                 <h3 className="text-lg font-bold mb-3">
-                  Vocês trabalham apenas em Londrina ou atendem outras regiões?
+                  Como funciona a entrega dos produtos?
                 </h3>
                 <p className="text-gray-300">
-                  Atendemos principalmente a região de Londrina, mas também
-                  realizamos projetos em outras cidades e estados. Para projetos
-                  fora de Londrina, oferecemos consultoria online e visitas
-                  presenciais programadas.
+                  para produtos em estoque pronta entrega, apos identificação do
+                  pagamento, ocorre o agendamento da entrega ou despacho via
+                  transportadora.
+                  <br /> <br /> para produtos em linha de produção, dentro do
+                  prazo de contrato, assim que descarregar em nosso centro de
+                  distribuição é feito o agendamento de entrega ou despacho via
+                  transportadora.
                 </p>
               </div>
-
+              {/* 
               <div className="bg-gray-900/30 p-6 rounded-xl border border-gray-800">
                 <h3 className="text-lg font-bold mb-3">
                   Vocês oferecem financiamento para os projetos?
@@ -707,7 +707,7 @@ export default function DecolDesignVSL() {
                   bancário para projetos maiores. Durante o atendimento,
                   apresentamos todas as opções disponíveis.
                 </p>
-              </div>
+              </div> */}
             </div>
           </div>
         </section>
