@@ -31,7 +31,7 @@ export default function DecolDesignVSL() {
     whatsapp: "",
   });
   const [videoProgress, setVideoProgress] = useState(0);
-  const [showCTA, setShowCTA] = useState(false);
+
   const [countdown, setCountdown] = useState({
     hours: 23,
     minutes: 59,
@@ -61,15 +61,6 @@ export default function DecolDesignVSL() {
     }, 1000);
 
     return () => clearInterval(timer);
-  }, []);
-
-  // Show CTA after 30 seconds
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowCTA(true);
-    }, 30000);
-
-    return () => clearTimeout(timer);
   }, []);
 
   const togglePlay = useCallback(() => {
@@ -376,49 +367,47 @@ export default function DecolDesignVSL() {
               </div>
             </div>
 
-            {/* Primary CTA - Adjusted for mobile */}
-            {showCTA && (
-              <div className="bg-gradient-to-r from-gold-900/50 to-black border-2 border-gold-400 rounded-xl p-4 sm:p-8 mb-8 sm:mb-12 animate-fadeIn">
-                <div className="text-center mb-4 sm:mb-6">
-                  <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-3 sm:mb-4">
-                    OPORTUNIDADE ÚNICA E LIMITADA
-                  </h2>
-                  <p className="text-base sm:text-lg text-gray-300 mb-3 sm:mb-4">
-                    Entre para o Grupo VIP hoje e ganhe um{" "}
-                    <span className="text-gold-400 font-bold">
-                      projeto conceitual completo GRÁTIS
-                    </span>{" "}
-                    para o ambiente que você escolher
-                  </p>
-                  <div className="flex items-center justify-center gap-2 mb-4 sm:mb-6">
-                    <Clock className="h-4 w-4 sm:h-5 sm:w-5 text-gold-400" />
-                    <p className="text-sm sm:text-base text-gold-400 font-medium">
-                      Esta oferta expira em{" "}
-                      {String(countdown.hours).padStart(2, "0")}:
-                      {String(countdown.minutes).padStart(2, "0")}:
-                      {String(countdown.seconds).padStart(2, "0")}
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex flex-col gap-4 justify-center">
-                  <Button
-                    className="bg-gold-400 hover:bg-gold-500 text-black font-bold py-4 sm:py-6 px-4 sm:px-8 rounded-md text-base sm:text-lg transition-all shadow-[0_0_20px_rgba(212,175,55,0.3)]"
-                    onClick={openModal}
-                  >
-                    QUERO ENTRAR PARA O GRUPO VIP AGORA
-                    <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
-                  </Button>
-                </div>
-
-                <div className="mt-3 sm:mt-4 text-center">
-                  <p className="text-xs sm:text-sm text-gray-400 flex items-center justify-center gap-1">
-                    <Lock className="h-3 w-3 sm:h-4 sm:w-4" /> Apenas 5 vagas
-                    disponíveis hoje - Acesso limitado
+            <div className="bg-gradient-to-r from-gold-900/50 to-black border-2 border-gold-400 rounded-xl p-4 sm:p-8 mb-8 sm:mb-12 animate-fadeIn">
+              <div className="text-center mb-4 sm:mb-6">
+                <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-3 sm:mb-4">
+                  OPORTUNIDADE ÚNICA E LIMITADA
+                </h2>
+                <p className="text-base sm:text-lg text-gray-300 mb-3 sm:mb-4">
+                  Entre para o Grupo VIP hoje e tenha e tenha acesso a
+                  <span className="text-gold-400 font-bold">
+                    {"  "}dicas de decorações GRÁTIS,
+                  </span>
+                  {"  "}
+                  &quot;o segredo da decoração da casa dos Famosos&quot;
+                </p>
+                <div className="flex items-center justify-center gap-2 mb-4 sm:mb-6">
+                  <Clock className="h-4 w-4 sm:h-5 sm:w-5 text-gold-400" />
+                  <p className="text-sm sm:text-base text-gold-400 font-medium">
+                    Esta oferta expira em{" "}
+                    {String(countdown.hours).padStart(2, "0")}:
+                    {String(countdown.minutes).padStart(2, "0")}:
+                    {String(countdown.seconds).padStart(2, "0")}
                   </p>
                 </div>
               </div>
-            )}
+
+              <div className="flex flex-col gap-4 justify-center">
+                <Button
+                  className="bg-gold-400 hover:bg-gold-500 text-black font-bold py-4 sm:py-6 px-4 sm:px-8 rounded-md text-base sm:text-lg transition-all shadow-[0_0_20px_rgba(212,175,55,0.3)]"
+                  onClick={openModal}
+                >
+                  QUERO ENTRAR PARA O GRUPO VIP AGORA
+                  <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
+                </Button>
+              </div>
+
+              <div className="mt-3 sm:mt-4 text-center">
+                <p className="text-xs sm:text-sm text-gray-400 flex items-center justify-center gap-1">
+                  <Lock className="h-3 w-3 sm:h-4 sm:w-4" /> Apenas 5 vagas
+                  disponíveis hoje - Acesso limitado
+                </p>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -627,9 +616,7 @@ export default function DecolDesignVSL() {
                     <span className="text-gold-400 font-bold">
                       GRATUITAMENTE
                     </span>{" "}
-                    nosso catálogo digital com 100 ambientes de luxo e todas as
-                    especificações técnicas usadas pelos designers mais
-                    renomados do Brasil.
+                    nosso Catalogo com ambientes de luxo da casa dos Famosos.
                   </p>
                   <div className="flex items-center gap-2">
                     <Check className="h-5 w-5 text-gold-400" />
