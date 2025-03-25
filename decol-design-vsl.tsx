@@ -2,20 +2,11 @@
 
 import type React from "react";
 import Image from "next/image";
-import {
-  ArrowRight,
-  Check,
-  Star,
-  Play,
-  Pause,
-  X,
-  Clock,
-  Lock,
-  Gift,
-} from "lucide-react";
+import { Check, Star, Play, Pause, X, Clock, Lock, Gift } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState, useRef, useEffect, useCallback } from "react";
 import { useMobile } from "@/hooks/use-mobile";
+import BotaoLead from "./components/button-group";
 
 // Update the component to use the mobile detection
 export default function DecolDesignVSL() {
@@ -74,10 +65,6 @@ export default function DecolDesignVSL() {
       setIsPlaying(!isPlaying);
     }
   }, [isPlaying]);
-
-  const openModal = () => {
-    window.location.href = "https://chat.whatsapp.com/InE138hOfcL9dtN0jWrAAE";
-  };
 
   // Update the modal/drawer close function to handle both
   const closeModal = () => {
@@ -395,14 +382,7 @@ export default function DecolDesignVSL() {
               </div>
 
               <div className="flex flex-col gap-4 justify-center">
-                <Button
-                  className="bg-gold-400 hover:bg-gold-500 text-black font-bold  p-10 rounded-md text-base sm:text-lg transition-all shadow-[0_0_20px_rgba(212,175,55,0.3)] whitespace-normal break-words text-center"
-                  onClick={openModal}
-                >
-                  <span className="flex flex-wrap justify-center">
-                    QUERO ENTRAR PARA O GRUPO VIP AGORA
-                  </span>
-                </Button>
+                <BotaoLead />
               </div>
 
               <div className="mt-3 sm:mt-4 text-center">
@@ -635,15 +615,7 @@ export default function DecolDesignVSL() {
 
             {/* Secondary CTA */}
             <div className="text-center">
-              <Button
-                className="bg-gold-400 hover:bg-gold-500 text-black font-bold py-4 sm:p-10 px-4  rounded-md text-base sm:text-lg transition-all shadow-[0_0_20px_rgba(212,175,55,0.3)] whitespace-normal break-words text-center"
-                onClick={openModal}
-              >
-                <span className="flex flex-wrap justify-center">
-                  QUERO ENTRAR PARA O GRUPO VIP AGORA
-                  <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
-                </span>
-              </Button>
+              <BotaoLead />
 
               <p className="mt-4 text-gray-400">
                 Restam apenas{" "}
@@ -771,15 +743,7 @@ export default function DecolDesignVSL() {
               </div>
             </div>
 
-            <Button
-              className="bg-gold-400 hover:bg-gold-500 text-black font-bold py-4 sm:py-8 px-4 sm:px-8 rounded-md text-base sm:text-lg transition-all shadow-[0_0_20px_rgba(212,175,55,0.3)] whitespace-normal break-words text-center"
-              onClick={openModal}
-            >
-              <span className="flex flex-wrap justify-center">
-                QUERO ENTRAR PARA O GRUPO VIP AGORA
-                <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
-              </span>
-            </Button>
+            <BotaoLead />
 
             <p className="mt-4 sm:mt-6 text-gray-400 text-xs sm:text-sm">
               Ao clicar no botão acima, você terá acesso imediato ao nosso Grupo
@@ -1051,12 +1015,7 @@ export default function DecolDesignVSL() {
                 </div>
 
                 <div className="pt-4">
-                  <Button
-                    type="submit"
-                    className="w-full bg-gold-400 hover:bg-gold-500 text-black font-bold py-4 rounded-md transition-all text-lg"
-                  >
-                    GARANTIR MINHA VAGA NO GRUPO VIP
-                  </Button>
+                  <BotaoLead />
 
                   <div className="mt-4 flex items-center justify-center gap-2 bg-gold-400/10 p-3 rounded-md">
                     <Gift className="h-5 w-5 text-gold-400" />
