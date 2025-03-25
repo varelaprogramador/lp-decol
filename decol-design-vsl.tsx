@@ -396,12 +396,11 @@ export default function DecolDesignVSL() {
 
               <div className="flex flex-col gap-4 justify-center">
                 <Button
-                  className="bg-gold-400 hover:bg-gold-500 text-black font-bold py-4 sm:py-8 px-4 sm:px-8 rounded-md text-base sm:text-lg transition-all shadow-[0_0_20px_rgba(212,175,55,0.3)] whitespace-normal break-words text-center"
+                  className="bg-gold-400 hover:bg-gold-500 text-black font-bold py-4  px-4 sm:p-10 rounded-md text-base sm:text-lg transition-all shadow-[0_0_20px_rgba(212,175,55,0.3)] whitespace-normal break-words text-center"
                   onClick={openModal}
                 >
                   <span className="flex flex-wrap justify-center">
                     QUERO ENTRAR PARA O GRUPO VIP AGORA
-                    <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
                   </span>
                 </Button>
               </div>
@@ -637,7 +636,7 @@ export default function DecolDesignVSL() {
             {/* Secondary CTA */}
             <div className="text-center">
               <Button
-                className="bg-gold-400 hover:bg-gold-500 text-black font-bold py-4 sm:py-8 px-4 sm:px-8 rounded-md text-base sm:text-lg transition-all shadow-[0_0_20px_rgba(212,175,55,0.3)] whitespace-normal break-words text-center"
+                className="bg-gold-400 hover:bg-gold-500 text-black font-bold py-4 sm:p-10 px-4  rounded-md text-base sm:text-lg transition-all shadow-[0_0_20px_rgba(212,175,55,0.3)] whitespace-normal break-words text-center"
                 onClick={openModal}
               >
                 <span className="flex flex-wrap justify-center">
