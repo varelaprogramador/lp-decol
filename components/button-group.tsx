@@ -3,7 +3,7 @@ import { Button } from "./ui/button";
 
 const BotaoLead = () => {
   const handleClick = () => {
-    event("Lead");
+    event("Lead", { value: 50, currency: "BRL" });
     window.open("https://chat.whatsapp.com/InE138hOfcL9dtN0jWrAAE");
   };
 
