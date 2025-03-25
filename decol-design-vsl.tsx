@@ -76,8 +76,7 @@ export default function DecolDesignVSL() {
   }, [isPlaying]);
 
   const openModal = () => {
-    setIsModalOpen(true);
-    document.body.style.overflow = "hidden"; // Prevent scrolling when modal is open
+    window.location.href = "https://chat.whatsapp.com/InE138hOfcL9dtN0jWrAAE";
   };
 
   // Update the modal/drawer close function to handle both
@@ -397,11 +396,13 @@ export default function DecolDesignVSL() {
 
               <div className="flex flex-col gap-4 justify-center">
                 <Button
-                  className="bg-gold-400 hover:bg-gold-500 text-black font-bold py-4 sm:py-6 px-4 sm:px-8 rounded-md text-base sm:text-lg transition-all shadow-[0_0_20px_rgba(212,175,55,0.3)]"
+                  className="bg-gold-400 hover:bg-gold-500 text-black font-bold py-4 sm:py-6 px-4 sm:px-8 rounded-md text-base sm:text-lg transition-all shadow-[0_0_20px_rgba(212,175,55,0.3)] whitespace-normal break-words text-center"
                   onClick={openModal}
                 >
-                  QUERO ENTRAR PARA O GRUPO VIP AGORA
-                  <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
+                  <span className="flex flex-wrap justify-center">
+                    QUERO ENTRAR PARA O GRUPO VIP AGORA
+                    <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
+                  </span>
                 </Button>
               </div>
 
@@ -636,12 +637,15 @@ export default function DecolDesignVSL() {
             {/* Secondary CTA */}
             <div className="text-center">
               <Button
-                className="w-full sm:w-auto bg-gold-400 hover:bg-gold-500 text-black font-bold py-4 sm:py-6 px-4 sm:px-10 rounded-md text-base sm:text-xl transition-all shadow-[0_0_20px_rgba(212,175,55,0.3)]"
+                className="bg-gold-400 hover:bg-gold-500 text-black font-bold py-4 sm:py-6 px-4 sm:px-8 rounded-md text-base sm:text-lg transition-all shadow-[0_0_20px_rgba(212,175,55,0.3)] whitespace-normal break-words text-center"
                 onClick={openModal}
               >
-                QUERO ENTRAR PARA O GRUPO VIP AGORA
-                <ArrowRight className="ml-2 h-5 w-5 sm:h-6 sm:w-6" />
+                <span className="flex flex-wrap justify-center">
+                  QUERO ENTRAR PARA O GRUPO VIP AGORA
+                  <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
+                </span>
               </Button>
+
               <p className="mt-4 text-gray-400">
                 Restam apenas{" "}
                 <span className="text-gold-400 font-bold">5 vagas</span> para o
@@ -769,11 +773,13 @@ export default function DecolDesignVSL() {
             </div>
 
             <Button
-              className="bg-gold-400 hover:bg-gold-500 text-black font-bold py-4 sm:py-6 px-6 sm:px-10 rounded-md text-base sm:text-xl transition-all shadow-[0_0_30px_rgba(212,175,55,0.4)] animate-pulse"
+              className="bg-gold-400 hover:bg-gold-500 text-black font-bold py-4 sm:py-6 px-4 sm:px-8 rounded-md text-base sm:text-lg transition-all shadow-[0_0_20px_rgba(212,175,55,0.3)] whitespace-normal break-words text-center"
               onClick={openModal}
             >
-              QUERO ENTRAR PARA O GRUPO VIP AGORA
-              <ArrowRight className="ml-2 h-5 w-5 sm:h-6 sm:w-6" />
+              <span className="flex flex-wrap justify-center">
+                QUERO ENTRAR PARA O GRUPO VIP AGORA
+                <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
+              </span>
             </Button>
 
             <p className="mt-4 sm:mt-6 text-gray-400 text-xs sm:text-sm">
