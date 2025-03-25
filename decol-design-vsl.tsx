@@ -396,7 +396,7 @@ export default function DecolDesignVSL() {
 
               <div className="flex flex-col gap-4 justify-center">
                 <Button
-                  className="bg-gold-400 hover:bg-gold-500 text-black font-bold py-4 sm:py-6 px-4 sm:px-8 rounded-md text-base sm:text-lg transition-all shadow-[0_0_20px_rgba(212,175,55,0.3)] whitespace-normal break-words text-center"
+                  className="bg-gold-400 hover:bg-gold-500 text-black font-bold py-4 sm:py-8 px-4 sm:px-8 rounded-md text-base sm:text-lg transition-all shadow-[0_0_20px_rgba(212,175,55,0.3)] whitespace-normal break-words text-center"
                   onClick={openModal}
                 >
                   <span className="flex flex-wrap justify-center">
@@ -637,7 +637,7 @@ export default function DecolDesignVSL() {
             {/* Secondary CTA */}
             <div className="text-center">
               <Button
-                className="bg-gold-400 hover:bg-gold-500 text-black font-bold py-4 sm:py-6 px-4 sm:px-8 rounded-md text-base sm:text-lg transition-all shadow-[0_0_20px_rgba(212,175,55,0.3)] whitespace-normal break-words text-center"
+                className="bg-gold-400 hover:bg-gold-500 text-black font-bold py-4 sm:py-8 px-4 sm:px-8 rounded-md text-base sm:text-lg transition-all shadow-[0_0_20px_rgba(212,175,55,0.3)] whitespace-normal break-words text-center"
                 onClick={openModal}
               >
                 <span className="flex flex-wrap justify-center">
@@ -773,7 +773,7 @@ export default function DecolDesignVSL() {
             </div>
 
             <Button
-              className="bg-gold-400 hover:bg-gold-500 text-black font-bold py-4 sm:py-6 px-4 sm:px-8 rounded-md text-base sm:text-lg transition-all shadow-[0_0_20px_rgba(212,175,55,0.3)] whitespace-normal break-words text-center"
+              className="bg-gold-400 hover:bg-gold-500 text-black font-bold py-4 sm:py-8 px-4 sm:px-8 rounded-md text-base sm:text-lg transition-all shadow-[0_0_20px_rgba(212,175,55,0.3)] whitespace-normal break-words text-center"
               onClick={openModal}
             >
               <span className="flex flex-wrap justify-center">
@@ -791,7 +791,7 @@ export default function DecolDesignVSL() {
       </main>
 
       {/* Footer - Adjusted for mobile */}
-      <footer className="py-4 sm:py-6 px-4 bg-black border-t border-gray-800">
+      <footer className="py-4 sm:py-8 px-4 bg-black border-t border-gray-800">
         <div className="container mx-auto max-w-6xl px-4 sm:px-6">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="mb-4 md:mb-0">
