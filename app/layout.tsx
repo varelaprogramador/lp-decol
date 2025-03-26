@@ -5,9 +5,8 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import Script from "next/script";
 import { FB_PIXEL_ID } from "./lib/facebook";
-import Image from "next/image";
 
-// Define fonts
+// Definição das fontes
 const playfair = Playfair_Display({
   subsets: ["latin"],
   display: "swap",
@@ -26,19 +25,47 @@ export const metadata: Metadata = {
     "Transforme seu espaço com o requinte e sofisticação que só a DECOL DESIGN pode oferecer. A escolha dos famosos agora ao seu alcance.",
   keywords:
     "design de interiores, móveis de luxo, decoração, Londrina, DECOL DESIGN",
+  openGraph: {
+    title: "DECOL DESIGN - Loja dos Famosos",
+    description:
+      "Transforme seu espaço com o requinte e sofisticação que só a DECOL DESIGN pode oferecer.",
+    url: "https://decol.design",
+    type: "website",
+    images: [
+      {
+        url: "https://decol.design/imagem-og.jpg",
+        width: 1200,
+        height: 630,
+        alt: "DECOL DESIGN - Loja dos Famosos",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <html
       lang="pt-BR"
       className={`${playfair.variable} ${montserrat.variable}`}
     >
       <head>
+        <meta
+          name="facebook-domain-verification"
+          content="kr57qqlp0v28xgf4rc846x5out528w"
+        />
+      </head>
+      <body className="min-h-screen bg-black font-sans antialiased">
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem={false}
+          disableTransitionOnChange
+        >
+          {children}
+        </ThemeProvider>
+
         {/* Facebook Pixel */}
         <Script
           id="facebook-pixel"
@@ -59,24 +86,14 @@ export default function RootLayout({
           }}
         />
         <noscript>
-          <Image
+          <img
             height="1"
             width="1"
-            alt=""
             style={{ display: "none" }}
             src={`https://www.facebook.com/tr?id=${FB_PIXEL_ID}&ev=PageView&noscript=1`}
+            alt=""
           />
         </noscript>
-      </head>
-      <body className="min-h-screen bg-black font-sans antialiased">
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
-          enableSystem={false}
-          disableTransitionOnChange
-        >
-          {children}
-        </ThemeProvider>
       </body>
     </html>
   );
