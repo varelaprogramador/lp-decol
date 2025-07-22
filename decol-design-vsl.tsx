@@ -116,7 +116,7 @@ export default function DecolDesignVSL() {
 
       // Show success message and close modal
       alert(
-        "Atendimento agendada com sucesso! Entraremos em contato em breve."
+        "Orçamento solicitado com sucesso! Entraremos em contato em breve."
       );
       closeModal();
 
@@ -230,7 +230,7 @@ export default function DecolDesignVSL() {
               width={400}
               height={200}
               className=""
-              alt={"logo"}
+              alt={"Decol Design - Design de Interiores em Londrina"}
             ></Image>
             <div className="flex items-center gap-2 sm:gap-4">
               <div className="flex items-center gap-1 sm:gap-2 bg-gold-400/10 px-2 sm:px-4 py-1 sm:py-2 rounded-md">
@@ -253,12 +253,12 @@ export default function DecolDesignVSL() {
           <div className="container mx-auto max-w-5xl px-4 sm:px-6">
             <div className="text-center mb-6 sm:mb-8">
               <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold mb-3 sm:mb-4 leading-tight">
-                <span className="text-gold-400">PARTICIPE: </span> clube de
-                ofertas “Loja dos Famosos” e tenha acesso a OFERTAS EXCLUSIVAS
+                <span className="text-gold-400">DESIGN DE INTERIORES EM LONDRINA: </span>
+                Transforme Sua Casa em um Ambiente de <span className="text-gold-400">LUXO</span>
               </h1>
               <p className="text-base sm:text-xl text-gray-300 max-w-3xl mx-auto">
-                Entre no Grupo Vip e tenha a oportunidade de comprar moveis de
-                alto padrão a valores de ocasião.
+                Projetos personalizados de decoração e design de interiores com móveis planejados sob medida.
+                Veja como criar ambientes sofisticados gastando menos.
               </p>
             </div>
 
@@ -274,7 +274,7 @@ export default function DecolDesignVSL() {
                   autoPlay
                   playsInline
                 >
-                  <source src="/video.mp4" type="video/mp4" />
+                  <source src="/video2.mp4" type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
 
@@ -282,9 +282,8 @@ export default function DecolDesignVSL() {
                 <div className="absolute inset-0 flex items-center justify-center bg-black/10">
                   <button
                     onClick={togglePlay}
-                    className={`bg-gold-400 hover:bg-gold-500 text-black p-4 sm:p-6 rounded-full transition-all duration-300 transform hover:scale-105 ${
-                      isPlaying && !videoEnded ? "opacity-0" : "opacity-100"
-                    }`}
+                    className={`bg-gold-400 hover:bg-gold-500 text-black p-4 sm:p-6 rounded-full transition-all duration-300 transform hover:scale-105 ${isPlaying && !videoEnded ? "opacity-0" : "opacity-100"
+                      }`}
                     aria-label={isPlaying ? "Pause video" : "Play video"}
                   >
                     {isPlaying ? (
@@ -360,20 +359,16 @@ export default function DecolDesignVSL() {
             <div className="bg-gradient-to-r from-gold-900/50 to-black border-2 border-gold-400 rounded-xl p-4 sm:p-8 mb-8 sm:mb-12 animate-fadeIn">
               <div className="text-center mb-4 sm:mb-6">
                 <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-3 sm:mb-4">
-                  OPORTUNIDADE ÚNICA E LIMITADA
+                  SOLICITE SEU ORÇAMENTO GRATUITO
                 </h2>
                 <p className="text-base sm:text-lg text-gray-300 mb-3 sm:mb-4">
-                  Entre para o Grupo VIP hoje e tenha e tenha acesso a
-                  <span className="text-gold-400 font-bold">
-                    {"  "}dicas de decorações GRÁTIS,
-                  </span>
-                  {"  "}
-                  &quot;o segredo da decoração da casa dos Famosos&quot;
+                  Receba uma <span className="text-gold-400 font-bold">consulta gratuita</span> e descubra como transformar sua casa
+                  {" "}com projetos de design de interiores personalizados em Londrina
                 </p>
                 <div className="flex items-center justify-center gap-2 mb-4 sm:mb-6">
                   <Clock className="h-4 w-4 sm:h-5 sm:w-5 text-gold-400" />
                   <p className="text-sm sm:text-base text-gold-400 font-medium">
-                    Esta oferta expira em{" "}
+                    Promoção válida por mais{" "}
                     {String(countdown.hours).padStart(2, "0")}:
                     {String(countdown.minutes).padStart(2, "0")}:
                     {String(countdown.seconds).padStart(2, "0")}
@@ -387,8 +382,8 @@ export default function DecolDesignVSL() {
 
               <div className="mt-3 sm:mt-4 text-center">
                 <p className="text-xs sm:text-sm text-gray-400 flex items-center justify-center gap-1">
-                  <Lock className="h-3 w-3 sm:h-4 sm:w-4" /> Apenas 5 vagas
-                  disponíveis hoje - Acesso limitado
+                  <Lock className="h-3 w-3 sm:h-4 sm:w-4" /> Atendimento limitado -
+                  Apenas 5 consultas gratuitas hoje
                 </p>
               </div>
             </div>
@@ -400,11 +395,10 @@ export default function DecolDesignVSL() {
           <div className="container mx-auto max-w-5xl px-4 sm:px-6">
             <div className="text-center mb-10">
               <h2 className="text-2xl md:text-3xl font-bold mb-4">
-                Clientes Satisfeitos que Transformaram seus Espaços
+                O que Nossos Clientes Dizem Sobre Nossos Projetos de Design
               </h2>
               <p className="text-gray-300">
-                Veja o que nossos clientes estão dizendo sobre os resultados que
-                alcançaram com a DECOL DESIGN
+                Mais de 200 projetos realizados em Londrina e região com total satisfação dos clientes
               </p>
             </div>
 
@@ -426,12 +420,12 @@ export default function DecolDesignVSL() {
                     ))}
                   </div>
                   <p className="text-gray-300 text-center mb-4">
-                    &quot;A DECOL DESIGN transformou minha casa em um verdadeiro
-                    sonho. O projeto superou todas as expectativas! &quot;
+                    &quot;Transformaram completamente minha sala. O projeto ficou exatamente como eu sempre sonhei.
+                    Recomendo para quem busca design de qualidade em Londrina.&quot;
                   </p>
                   <div className="text-center">
-                    <h4 className="font-bold">Roberto Almeida</h4>
-                    <p className="text-gold-400 text-sm">Empresário</p>
+                    <h4 className="font-bold">Marina Silva</h4>
+                    <p className="text-gold-400 text-sm">Zona Sul - Londrina</p>
                   </div>
                 </div>
               </div>
@@ -453,13 +447,12 @@ export default function DecolDesignVSL() {
                     ))}
                   </div>
                   <p className="text-gray-300 text-center mb-4">
-                    &quot;Cada detalhe foi pensado com cuidado. O resultado é
-                    simplesmente deslumbrante e todos os visitantes ficam
-                    impressionados. &quot;
+                    &quot;Móveis planejados de excelente qualidade. O projeto do quarto do meu filho ficou perfeito
+                    e o atendimento foi excepcional do início ao fim.&quot;
                   </p>
                   <div className="text-center">
-                    <h4 className="font-bold">Carla Mendonça</h4>
-                    <p className="text-gold-400 text-sm">Apresentadora</p>
+                    <h4 className="font-bold">Roberto Nascimento</h4>
+                    <p className="text-gold-400 text-sm">Centro - Londrina</p>
                   </div>
                 </div>
               </div>
@@ -481,13 +474,12 @@ export default function DecolDesignVSL() {
                     ))}
                   </div>
                   <p className="text-gray-300 text-center mb-4">
-                    &quot;Profissionalismo impecável. O projeto foi entregue no
-                    prazo e o resultado final superou todas as minhas
-                    expectativas. &quot;
+                    &quot;Cozinha dos sonhos! O projeto integrou perfeitamente com a área gourmet.
+                    Profissionais competentes que cumprem o que prometem.&quot;
                   </p>
                   <div className="text-center">
-                    <h4 className="font-bold">Paulo Rodrigues</h4>
-                    <p className="text-gold-400 text-sm">Médico</p>
+                    <h4 className="font-bold">Ana Paula</h4>
+                    <p className="text-gold-400 text-sm">Gleba Palhano - Londrina</p>
                   </div>
                 </div>
               </div>
@@ -500,13 +492,11 @@ export default function DecolDesignVSL() {
           <div className="container mx-auto max-w-5xl px-4 sm:px-6">
             <div className="text-center mb-10">
               <h2 className="text-2xl md:text-3xl font-bold mb-4">
-                Por Que Os{" "}
-                <span className="text-gold-400">Famosos De Londrina</span>{" "}
-                Escolhem A DECOL DESIGN
+                Por Que Escolher a <span className="text-gold-400">DECOL DESIGN</span> Para Seu Projeto
               </h2>
               <p className="text-gray-300 max-w-3xl mx-auto">
-                Entre para o Grupo VIP hoje e tenha acesso aos mesmos benefícios
-                exclusivos que nossos clientes mais exigentes desfrutam
+                Especialistas em design de interiores e móveis planejados em Londrina há mais de 10 anos.
+                Transformamos espaços com elegância e funcionalidade.
               </p>
             </div>
 
@@ -529,23 +519,26 @@ export default function DecolDesignVSL() {
                   </svg>
                 </div>
                 <h3 className="text-xl font-bold mb-3">
-                  Projeto Personalizado
+                  Projetos 100% Personalizados
                 </h3>
                 <p className="text-gray-400 mb-4">
-                  Criamos projetos exclusivos que refletem sua personalidade e
-                  estilo de vida, com soluções sob medida para suas
-                  necessidades.
+                  Cada projeto é único e desenvolvido especialmente para suas necessidades,
+                  estilo de vida e orçamento. Móveis planejados sob medida para aproveitamento total do espaço.
                 </p>
                 <ul className="space-y-2">
                   <li className="flex items-start gap-2">
                     <Check className="h-5 w-5 text-gold-400 flex-shrink-0 mt-0.5" />
                     <p className="text-gray-300">
-                      Análise detalhada do seu espaço
+                      Visita técnica gratuita
                     </p>
                   </li>
                   <li className="flex items-start gap-2">
                     <Check className="h-5 w-5 text-gold-400 flex-shrink-0 mt-0.5" />
-                    <p className="text-gray-300">Projeto 3D fotorrealista</p>
+                    <p className="text-gray-300">Projeto 3D realístico</p>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Check className="h-5 w-5 text-gold-400 flex-shrink-0 mt-0.5" />
+                    <p className="text-gray-300">Acompanhamento completo da obra</p>
                   </li>
                 </ul>
               </div>
@@ -567,19 +560,23 @@ export default function DecolDesignVSL() {
                     />
                   </svg>
                 </div>
-                <h3 className="text-xl font-bold mb-3">Materiais Premium</h3>
+                <h3 className="text-xl font-bold mb-3">Materiais de Alta Qualidade</h3>
                 <p className="text-gray-400 mb-4">
-                  Utilizamos apenas materiais de alta qualidade, garantindo
-                  durabilidade e sofisticação em cada detalhe do seu projeto.
+                  Trabalhamos apenas com fornecedores certificados e materiais premium.
+                  Garantia estendida em todos os móveis e acabamentos.
                 </p>
                 <ul className="space-y-2">
                   <li className="flex items-start gap-2">
                     <Check className="h-5 w-5 text-gold-400 flex-shrink-0 mt-0.5" />
-                    <p className="text-gray-300">Fornecedores exclusivos</p>
+                    <p className="text-gray-300">MDF 18mm de primeira linha</p>
                   </li>
                   <li className="flex items-start gap-2">
                     <Check className="h-5 w-5 text-gold-400 flex-shrink-0 mt-0.5" />
-                    <p className="text-gray-300">Garantia estendida</p>
+                    <p className="text-gray-300">Ferragens Blum importadas</p>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Check className="h-5 w-5 text-gold-400 flex-shrink-0 mt-0.5" />
+                    <p className="text-gray-300">5 anos de garantia</p>
                   </li>
                 </ul>
               </div>
@@ -593,20 +590,16 @@ export default function DecolDesignVSL() {
                 </div>
                 <div>
                   <h3 className="text-xl font-bold mb-2">
-                    BÔNUS EXCLUSIVO PARA MEMBROS VIP
+                    BÔNUS: CONSULTORIA GRATUITA EM SUA CASA
                   </h3>
                   <p className="text-gray-300 mb-4">
-                    Entre para o Grupo VIP hoje e receba{" "}
-                    <span className="text-gold-400 font-bold">
-                      GRATUITAMENTE
-                    </span>{" "}
-                    nosso Catalogo com ambientes de luxo da casa dos Famosos.
+                    Agende hoje sua consulta <span className="text-gold-400 font-bold">100% GRATUITA</span> e receba
+                    dicas profissionais para transformar seus ambientes + catálogo com 100 projetos de inspiração.
                   </p>
                   <div className="flex items-center gap-2">
                     <Check className="h-5 w-5 text-gold-400" />
                     <p className="text-gold-400 font-medium">
-                      Valor de mercado: R$ 497,00 - Hoje: GRÁTIS para membros
-                      VIP
+                      Valor da consultoria: R$ 350,00 - Hoje: GRÁTIS
                     </p>
                   </div>
                 </div>
@@ -618,13 +611,12 @@ export default function DecolDesignVSL() {
               <BotaoLead />
 
               <p className="mt-4 text-gray-400">
-                Restam apenas{" "}
-                <span className="text-gold-400 font-bold">5 vagas</span> para o
-                Grupo VIP hoje
+                Apenas <span className="text-gold-400 font-bold">5 consultas gratuitas</span> disponíveis hoje
               </p>
             </div>
           </div>
         </section>
+
 
         {/* FAQ Section */}
         <section className="py-12 px-4 bg-black">
@@ -832,9 +824,8 @@ export default function DecolDesignVSL() {
                     name="name"
                     value={formData.name}
                     onChange={handleInputChange}
-                    className={`w-full bg-gray-800 border ${
-                      errors.name ? "border-red-500" : "border-gray-700"
-                    } rounded-md py-3 px-4 text-white focus:outline-none focus:ring-2 focus:ring-gold-400/50`}
+                    className={`w-full bg-gray-800 border ${errors.name ? "border-red-500" : "border-gray-700"
+                      } rounded-md py-3 px-4 text-white focus:outline-none focus:ring-2 focus:ring-gold-400/50`}
                     placeholder="Seu nome completo"
                   />
                   {errors.name && (
@@ -863,9 +854,8 @@ export default function DecolDesignVSL() {
                         setErrors((prev) => ({ ...prev, whatsapp: "" }));
                       }
                     }}
-                    className={`w-full bg-gray-800 border ${
-                      errors.whatsapp ? "border-red-500" : "border-gray-700"
-                    } rounded-md py-3 px-4 text-white focus:outline-none focus:ring-2 focus:ring-gold-400/50`}
+                    className={`w-full bg-gray-800 border ${errors.whatsapp ? "border-red-500" : "border-gray-700"
+                      } rounded-md py-3 px-4 text-white focus:outline-none focus:ring-2 focus:ring-gold-400/50`}
                     placeholder="(00) 00000-0000"
                   />
                   {errors.whatsapp && (
@@ -953,9 +943,8 @@ export default function DecolDesignVSL() {
                     name="name"
                     value={formData.name}
                     onChange={handleInputChange}
-                    className={`w-full bg-gray-800 border ${
-                      errors.name ? "border-red-500" : "border-gray-700"
-                    } rounded-md py-3 px-4 text-white focus:outline-none focus:ring-2 focus:ring-gold-400/50`}
+                    className={`w-full bg-gray-800 border ${errors.name ? "border-red-500" : "border-gray-700"
+                      } rounded-md py-3 px-4 text-white focus:outline-none focus:ring-2 focus:ring-gold-400/50`}
                     placeholder="Seu nome completo"
                   />
                   {errors.name && (
@@ -984,9 +973,8 @@ export default function DecolDesignVSL() {
                         setErrors((prev) => ({ ...prev, whatsapp: "" }));
                       }
                     }}
-                    className={`w-full bg-gray-800 border ${
-                      errors.whatsapp ? "border-red-500" : "border-gray-700"
-                    } rounded-md py-3 px-4 text-white focus:outline-none focus:ring-2 focus:ring-gold-400/50`}
+                    className={`w-full bg-gray-800 border ${errors.whatsapp ? "border-red-500" : "border-gray-700"
+                      } rounded-md py-3 px-4 text-white focus:outline-none focus:ring-2 focus:ring-gold-400/50`}
                     placeholder="(00) 00000-0000"
                   />
                   {errors.whatsapp && (
