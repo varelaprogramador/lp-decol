@@ -20,6 +20,7 @@ import {
 import { Button } from "@/components/ui/button"
 import { useState, useRef, useEffect, useCallback } from "react"
 import { useMobile } from "@/hooks/use-mobile"
+import ProductsSection from "@/components/productsSection"
 
 export default function DecolDesignShowroom() {
   const [isPlaying, setIsPlaying] = useState(true)
@@ -342,14 +343,14 @@ export default function DecolDesignShowroom() {
                   <Phone className="h-5 w-5 md:h-6 md:w-6 mr-2 md:mr-3" />
                   FALAR AGORA NO WHATSAPP
                 </Button>
-                <Button
+                {/* <Button
                   onClick={openModal}
                   variant="outline"
                   size={isMobile ? "default" : "lg"}
                   className={`w-full md:w-auto border-gold-600 text-gold-600 hover:bg-gold-50 px-6 md:px-10 py-3 md:py-4 text-base md:text-xl font-bold ${isDarkMode ? "hover:bg-gold-900/20" : ""} bg-transparent`}
                 >
                   SOLICITAR ORÇAMENTO
-                </Button>
+                </Button> */}
               </div>
             </div>
 
@@ -360,8 +361,7 @@ export default function DecolDesignShowroom() {
                   CONHEÇA NOSSO SHOWROOM EXCLUSIVO
                 </h2>
                 <p className={`text-sm md:text-lg ${themeClasses.textMuted} max-w-3xl mx-auto`}>
-                  <strong>2 andares de luxo</strong> com curadoria exclusiva de estofados e salas de jantar que atendem
-                  celebridades e clientes do agro
+                  <strong>2 andares de luxo</strong> com curadoria exclusiva de estofados e salas de jantar
                 </p>
               </div>
 
@@ -470,9 +470,9 @@ export default function DecolDesignShowroom() {
                       />
                     </svg>
                   </div>
-                  <h3 className={`font-bold text-base md:text-lg mb-2 ${themeClasses.text}`}>2 Andares Exclusivos</h3>
+                  <h3 className={`font-bold text-base md:text-lg mb-2 ${themeClasses.text}`}>O maior Showroom do Norte do Paraná</h3>
                   <p className={`${themeClasses.textMuted} text-xs md:text-sm`}>
-                    Showroom completo com peças à pronta entrega e sob medida
+                    espaço completo com peças personalizadas
                   </p>
                 </div>
 
@@ -484,7 +484,7 @@ export default function DecolDesignShowroom() {
                   </div>
                   <h3 className={`font-bold text-base md:text-lg mb-2 ${themeClasses.text}`}>Loja dos Famosos</h3>
                   <p className={`${themeClasses.textMuted} text-xs md:text-sm`}>
-                    Referência para celebridades e clientes exigentes
+                    já fizemos parte da casa de muitas celebridades!
                   </p>
                 </div>
 
@@ -496,13 +496,15 @@ export default function DecolDesignShowroom() {
                   </div>
                   <h3 className={`font-bold text-base md:text-lg mb-2 ${themeClasses.text}`}>Londrina/PR</h3>
                   <p className={`${themeClasses.textMuted} text-xs md:text-sm`}>
-                    Localização privilegiada no centro da cidade
+                    Acesso facilitado e amplo estacionamento exclusivo para clientes
                   </p>
                 </div>
               </div>
             </div>
           </div>
         </section>
+
+        <ProductsSection />
 
         {/* Localização Mobile Otimizada */}
         <section className="py-12 md:py-16 px-3 md:px-4 bg-gold-600 text-white">
@@ -616,8 +618,8 @@ export default function DecolDesignShowroom() {
                   <span className="text-gold-600 font-bold"> salas de jantar sob medida</span>.
                 </p>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 my-6 md:my-8">
-                  <div>
+                <div className="flex items-center justify-center md:gap-8 my-6 md:my-8">
+                  {/* <div>
                     <h3 className={`text-lg md:text-xl font-bold mb-3 md:mb-4 ${themeClasses.text}`}>
                       NOSSOS CLIENTES:
                     </h3>
@@ -639,28 +641,32 @@ export default function DecolDesignShowroom() {
                         <strong className="text-sm md:text-base">Famílias exigentes</strong>
                       </li>
                     </ul>
-                  </div>
+                  </div> */}
 
                   <div>
                     <h3 className={`text-lg md:text-xl font-bold mb-3 md:mb-4 ${themeClasses.text}`}>
-                      NOSSO DIFERENCIAL:
+                      NOSSOS DIFERENCIAIS:
                     </h3>
-                    <ul className={`space-y-2 ${themeClasses.textMuted}`}>
+                    <ul className={`flex flex-col gap-6 ${themeClasses.textMuted}`}>
                       <li className="flex items-center gap-2">
                         <Check className="h-4 w-4 md:h-5 md:w-5 text-gold-600 flex-shrink-0" />
-                        <strong className="text-sm md:text-base">Tecidos nobres e assentos anatômicos</strong>
+                        <strong className="text-sm md:text-base">Especialistas em estofados e salas de jantar
+                        Nosso foco está nos dois ambientes mais marcantes do lar: sofás, poltronas, mesas e cadeiras que combinam conforto, estética e personalidade.</strong>
                       </li>
                       <li className="flex items-center gap-2">
                         <Check className="h-4 w-4 md:h-5 md:w-5 text-gold-600 flex-shrink-0" />
-                        <strong className="text-sm md:text-base">Mesas personalizadas exclusivas</strong>
+                        <strong className="text-sm md:text-base">Personalização total para se adaptar ao seu projeto
+                        Você escolhe os detalhes e nós cuidamos do acabamento! Os móveis podem ser personalizados em madeira, serralheria, pedra, tecidos e muito mais!</strong>
                       </li>
                       <li className="flex items-center gap-2">
                         <Check className="h-4 w-4 md:h-5 md:w-5 text-gold-600 flex-shrink-0" />
-                        <strong className="text-sm md:text-base">Showroom com 2 andares</strong>
+                        <strong className="text-sm md:text-base">Showroom com dois andares e estrutura completa
+                        Nosso espaço em Londrina oferece uma experiência imersiva, com ambientes cuidadosamente montados para inspirar e apresentar as possibilidades de um alto padrão real.</strong>
                       </li>
                       <li className="flex items-center gap-2">
                         <Check className="h-4 w-4 md:h-5 md:w-5 text-gold-600 flex-shrink-0" />
-                        <strong className="text-sm md:text-base">Atendimento VIP personalizado</strong>
+                        <strong className="text-sm md:text-base">Atendimento VIP e consultoria de verdade
+                        Aqui, cada cliente é atendido com tempo, escuta e olhar técnico. Seja com hora marcada ou em visita espontânea, oferecemos um atendimento que entende seu estilo e entrega exatamente o que você procura.</strong>
                       </li>
                     </ul>
                   </div>
