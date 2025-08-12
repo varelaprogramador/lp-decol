@@ -1,6 +1,6 @@
-"use client"
-import type React from "react"
-import Image from "next/image"
+"use client";
+import type React from "react";
+import Image from "next/image";
 import {
   Check,
   Star,
@@ -16,39 +16,39 @@ import {
   Moon,
   Maximize,
   Minimize,
-} from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { useState, useRef, useEffect, useCallback } from "react"
-import { useMobile } from "@/hooks/use-mobile"
-import ProductsSection from "@/components/productsSection"
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { useState, useRef, useEffect, useCallback } from "react";
+import { useMobile } from "@/hooks/use-mobile";
+import ProductsSection from "@/components/productsSection";
 
 export default function DecolDesignShowroom() {
-  const [isPlaying, setIsPlaying] = useState(true)
-  const [isModalOpen, setIsModalOpen] = useState(false)
-  const [isVideoExpanded, setIsVideoExpanded] = useState(false)
-  const [isDarkMode, setIsDarkMode] = useState(false)
+  const [isPlaying, setIsPlaying] = useState(true);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isVideoExpanded, setIsVideoExpanded] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     whatsapp: "",
     email: "",
     message: "",
-  })
+  });
   const [errors, setErrors] = useState({
     name: "",
     whatsapp: "",
-  })
-  const [videoProgress, setVideoProgress] = useState(0)
-  const [isMuted, setIsMuted] = useState(true)
-  const [videoEnded, setVideoEnded] = useState(false)
-  const isMobile = useMobile()
-  const videoRef = useRef<HTMLVideoElement>(null)
-  const modalRef = useRef<HTMLDivElement>(null)
-  const drawerRef = useRef<HTMLDivElement>(null)
-  const expandedVideoRef = useRef<HTMLVideoElement>(null)
+  });
+  const [videoProgress, setVideoProgress] = useState(0);
+  const [isMuted, setIsMuted] = useState(true);
+  const [videoEnded, setVideoEnded] = useState(false);
+  const isMobile = useMobile();
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const modalRef = useRef<HTMLDivElement>(null);
+  const drawerRef = useRef<HTMLDivElement>(null);
+  const expandedVideoRef = useRef<HTMLVideoElement>(null);
 
   const toggleTheme = () => {
-    setIsDarkMode(!isDarkMode)
-  }
+    setIsDarkMode(!isDarkMode);
+  };
 
   const themeClasses = {
     bg: isDarkMode ? "bg-gray-900" : "bg-white",
@@ -58,190 +58,215 @@ export default function DecolDesignShowroom() {
     border: isDarkMode ? "border-gray-700" : "border-gray-200",
     card: isDarkMode ? "bg-gray-800" : "bg-white",
     cardAlt: isDarkMode ? "bg-gray-700" : "bg-gray-50",
-  }
+  };
 
   const togglePlay = useCallback(() => {
-    const currentVideo = isVideoExpanded ? expandedVideoRef.current : videoRef.current
+    const currentVideo = isVideoExpanded
+      ? expandedVideoRef.current
+      : videoRef.current;
     if (currentVideo) {
       if (isPlaying) {
-        currentVideo.pause()
+        currentVideo.pause();
       } else {
-        currentVideo.play()
-        setVideoEnded(false)
+        currentVideo.play();
+        setVideoEnded(false);
       }
-      setIsPlaying(!isPlaying)
+      setIsPlaying(!isPlaying);
     }
-  }, [isPlaying, isVideoExpanded])
+  }, [isPlaying, isVideoExpanded]);
 
   const toggleVideoExpanded = () => {
-    setIsVideoExpanded(!isVideoExpanded)
+    setIsVideoExpanded(!isVideoExpanded);
     if (!isVideoExpanded) {
-      document.body.style.overflow = "hidden"
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = "auto"
+      document.body.style.overflow = "auto";
     }
-  }
+  };
 
   const closeModal = () => {
-    setIsModalOpen(false)
-    document.body.style.overflow = "auto"
-  }
+    setIsModalOpen(false);
+    document.body.style.overflow = "auto";
+  };
 
   const openModal = () => {
-    setIsModalOpen(true)
-    document.body.style.overflow = "hidden"
-  }
+    setIsModalOpen(true);
+    document.body.style.overflow = "hidden";
+  };
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
       [name]: value,
-    }))
+    }));
     if (errors[name as keyof typeof errors]) {
       setErrors((prev) => ({
         ...prev,
         [name]: "",
-      }))
+      }));
     }
-  }
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    let valid = true
-    const newErrors = { name: "", whatsapp: "" }
+    e.preventDefault();
+    let valid = true;
+    const newErrors = { name: "", whatsapp: "" };
 
     if (!formData.name.trim()) {
-      newErrors.name = "Nome é obrigatório"
-      valid = false
+      newErrors.name = "Nome é obrigatório";
+      valid = false;
     }
 
     if (!formData.whatsapp.trim()) {
-      newErrors.whatsapp = "WhatsApp é obrigatório"
-      valid = false
+      newErrors.whatsapp = "WhatsApp é obrigatório";
+      valid = false;
     } else if (!/^[0-9]{10,11}$/.test(formData.whatsapp.replace(/\D/g, ""))) {
-      newErrors.whatsapp = "WhatsApp inválido"
-      valid = false
+      newErrors.whatsapp = "WhatsApp inválido";
+      valid = false;
     }
 
-    setErrors(newErrors)
+    setErrors(newErrors);
 
     if (valid) {
-      console.log("Form submitted:", formData)
-      alert("Mensagem enviada! Entraremos em contato em breve.")
-      closeModal()
+      console.log("Form submitted:", formData);
+      alert("Mensagem enviada! Entraremos em contato em breve.");
+      closeModal();
       setFormData({
         name: "",
         whatsapp: "",
         email: "",
         message: "",
-      })
+      });
     }
-  }
+  };
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (isMobile) {
-        if (drawerRef.current && !drawerRef.current.contains(event.target as Node)) {
-          const clickY = event.clientY
-          const drawerTop = window.innerHeight - drawerRef.current.offsetHeight
+        if (
+          drawerRef.current &&
+          !drawerRef.current.contains(event.target as Node)
+        ) {
+          const clickY = event.clientY;
+          const drawerTop = window.innerHeight - drawerRef.current.offsetHeight;
           if (clickY < drawerTop) {
-            closeModal()
+            closeModal();
           }
         }
       } else {
-        if (modalRef.current && !modalRef.current.contains(event.target as Node)) {
-          closeModal()
+        if (
+          modalRef.current &&
+          !modalRef.current.contains(event.target as Node)
+        ) {
+          closeModal();
         }
       }
-    }
+    };
 
     if (isModalOpen) {
-      document.addEventListener("mousedown", handleClickOutside)
+      document.addEventListener("mousedown", handleClickOutside);
     }
 
     return () => {
-      document.removeEventListener("mousedown", handleClickOutside)
-    }
-  }, [isModalOpen, isMobile])
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isModalOpen, isMobile]);
 
   useEffect(() => {
-    const handlePlay = () => setIsPlaying(true)
-    const handlePause = () => setIsPlaying(false)
+    const handlePlay = () => setIsPlaying(true);
+    const handlePause = () => setIsPlaying(false);
     const handleTimeUpdate = () => {
-      const currentVideo = isVideoExpanded ? expandedVideoRef.current : videoRef.current
+      const currentVideo = isVideoExpanded
+        ? expandedVideoRef.current
+        : videoRef.current;
       if (currentVideo) {
-        const progress = (currentVideo.currentTime / currentVideo.duration) * 100
-        setVideoProgress(progress)
+        const progress =
+          (currentVideo.currentTime / currentVideo.duration) * 100;
+        setVideoProgress(progress);
       }
-    }
+    };
     const handleEnded = () => {
-      setIsPlaying(false)
-      setVideoEnded(true)
-    }
+      setIsPlaying(false);
+      setVideoEnded(true);
+    };
 
-    const videoElement = isVideoExpanded ? expandedVideoRef.current : videoRef.current
+    const videoElement = isVideoExpanded
+      ? expandedVideoRef.current
+      : videoRef.current;
     if (videoElement) {
-      videoElement.addEventListener("play", handlePlay)
-      videoElement.addEventListener("pause", handlePause)
-      videoElement.addEventListener("timeupdate", handleTimeUpdate)
-      videoElement.addEventListener("ended", handleEnded)
+      videoElement.addEventListener("play", handlePlay);
+      videoElement.addEventListener("pause", handlePause);
+      videoElement.addEventListener("timeupdate", handleTimeUpdate);
+      videoElement.addEventListener("ended", handleEnded);
     }
 
     return () => {
       if (videoElement) {
-        videoElement.removeEventListener("play", handlePlay)
-        videoElement.removeEventListener("pause", handlePause)
-        videoElement.removeEventListener("timeupdate", handleTimeUpdate)
-        videoElement.removeEventListener("ended", handleEnded)
+        videoElement.removeEventListener("play", handlePlay);
+        videoElement.removeEventListener("pause", handlePause);
+        videoElement.removeEventListener("timeupdate", handleTimeUpdate);
+        videoElement.removeEventListener("ended", handleEnded);
       }
-    }
-  }, [isVideoExpanded])
+    };
+  }, [isVideoExpanded]);
 
   // Sync video time when switching between normal and expanded
   useEffect(() => {
     if (isVideoExpanded && videoRef.current && expandedVideoRef.current) {
-      expandedVideoRef.current.currentTime = videoRef.current.currentTime
+      expandedVideoRef.current.currentTime = videoRef.current.currentTime;
       if (isPlaying) {
-        expandedVideoRef.current.play()
+        expandedVideoRef.current.play();
       }
-    } else if (!isVideoExpanded && videoRef.current && expandedVideoRef.current) {
-      videoRef.current.currentTime = expandedVideoRef.current.currentTime
+    } else if (
+      !isVideoExpanded &&
+      videoRef.current &&
+      expandedVideoRef.current
+    ) {
+      videoRef.current.currentTime = expandedVideoRef.current.currentTime;
       if (isPlaying) {
-        videoRef.current.play()
+        videoRef.current.play();
       }
     }
-  }, [isVideoExpanded, isPlaying])
+  }, [isVideoExpanded, isPlaying]);
 
   const formatWhatsApp = (value: string) => {
-    const numbers = value.replace(/\D/g, "")
-    if (numbers.length <= 2) return numbers
-    if (numbers.length <= 7) return `(${numbers.slice(0, 2)}) ${numbers.slice(2)}`
-    return `(${numbers.slice(0, 2)}) ${numbers.slice(2, 7)}-${numbers.slice(7, 11)}`
-  }
+    const numbers = value.replace(/\D/g, "");
+    if (numbers.length <= 2) return numbers;
+    if (numbers.length <= 7)
+      return `(${numbers.slice(0, 2)}) ${numbers.slice(2)}`;
+    return `(${numbers.slice(0, 2)}) ${numbers.slice(2, 7)}-${numbers.slice(
+      7,
+      11
+    )}`;
+  };
 
   const toggleMute = () => {
-    const currentVideo = isVideoExpanded ? expandedVideoRef.current : videoRef.current
+    const currentVideo = isVideoExpanded
+      ? expandedVideoRef.current
+      : videoRef.current;
     if (currentVideo) {
-      const newMutedState = !currentVideo.muted
-      currentVideo.muted = newMutedState
-      setIsMuted(newMutedState)
+      const newMutedState = !currentVideo.muted;
+      currentVideo.muted = newMutedState;
+      setIsMuted(newMutedState);
     }
-  }
+  };
 
   const openWhatsApp = () => {
     window.open(
-      "https://wa.me/5543999999999?text=Olá! Vi o site da Decol Design e gostaria de conhecer os estofados e salas de jantar. Quando posso visitar a loja?",
-      "_blank",
-    )
-  }
+      "https://wa.me/5543991201005?text=Olá! Vi o site da Decol Design e gostaria de conhecer os estofados e salas de jantar. Quando posso visitar a loja?",
+      "_blank"
+    );
+  };
 
   const openMaps = () => {
     window.open(
       "https://www.google.com/maps/place/DECOL+DESIGN+-+LOJA+DOS+FAMOSOS/@-23.2648510,-51.1556386,17z/data=!3m1!4b1!4m6!3m5!1s0x94eb45fd2f23f967:0x8c031b1798108722!8m2!3d-23.2648510!4d-51.1556386!16s%2Fg%2F11y3k8qp0q",
-      "_blank",
-    )
-  }
+      "_blank"
+    );
+  };
 
   return (
     <div
@@ -269,13 +294,15 @@ export default function DecolDesignShowroom() {
                     <MapPin className="h-5 w-5" />
                     <div>
                       <p className="font-semibold text-sm">Londrina/PR</p>
-                      <p className="text-xs opacity-90">R. Lupércio Pozato, 933</p>
+                      <p className="text-xs opacity-90">
+                        R. Lupércio Pozato, 933
+                      </p>
                     </div>
                   </div>
                   <div className="flex items-center gap-2">
                     <Phone className="h-5 w-5" />
                     <div>
-                      <p className="font-semibold text-sm">(43) 99999-9999</p>
+                      <p className="font-semibold text-sm">(43) 99120-1005</p>
                       <p className="text-xs opacity-90">Seg-Sex: 8h-18h</p>
                     </div>
                   </div>
@@ -318,7 +345,9 @@ export default function DecolDesignShowroom() {
         <section className={`py-8 md:py-20 px-3 md:px-4 ${themeClasses.bgAlt}`}>
           <div className="container mx-auto max-w-7xl">
             <div className="text-center mb-8 md:mb-12">
-              <h1 className={`text-2xl md:text-6xl font-bold mb-4 md:mb-2  leading-tight`}>
+              <h1
+                className={`text-2xl md:text-6xl font-bold mb-4 md:mb-2  leading-tight`}
+              >
                 <h1 className="bg-gradient-to-r from-yellow-400 via-yellow-500  to-yellow-600 bg-clip-text text-transparent font-playfair drop-shadow-sm">
                   DECOL DESIGN
                 </h1>
@@ -330,9 +359,11 @@ export default function DecolDesignShowroom() {
               <p
                 className={`text-base md:text-2xl ${themeClasses.textMuted} max-w-4xl mx-auto mb-6 md:mb-8 font-medium px-2`}
               >
-                <strong>Estofados de Alto Padrão</strong> e <strong>Salas de Jantar Sob Medida</strong>
+                <strong>Estofados de Alto Padrão</strong> e{" "}
+                <strong>Salas de Jantar Sob Medida</strong>
                 <br />
-                Onde celebridades e clientes exigentes encontram sofisticação em Londrina/PR
+                Onde celebridades e clientes exigentes encontram sofisticação em
+                Londrina/PR
               </p>
               <div className="flex flex-col gap-3 md:gap-4 justify-center items-center px-3">
                 <Button
@@ -360,8 +391,11 @@ export default function DecolDesignShowroom() {
                 <h2 className="text-xl md:text-4xl font-bold mb-3 md:mb-4 bg-gradient-to-r from-yellow-400 via-amber-500 to-yellow-600 bg-clip-text text-transparent font-playfair drop-shadow-sm">
                   CONHEÇA NOSSO SHOWROOM EXCLUSIVO
                 </h2>
-                <p className={`text-sm md:text-lg ${themeClasses.textMuted} max-w-3xl mx-auto`}>
-                  <strong>2 andares de luxo</strong> com curadoria exclusiva de estofados e salas de jantar
+                <p
+                  className={`text-sm md:text-lg ${themeClasses.textMuted} max-w-3xl mx-auto`}
+                >
+                  <strong>2 andares de luxo</strong> com curadoria exclusiva de
+                  estofados e salas de jantar
                 </p>
               </div>
 
@@ -385,8 +419,9 @@ export default function DecolDesignShowroom() {
                   <div className="absolute inset-0 flex items-center justify-center bg-black/10">
                     <button
                       onClick={togglePlay}
-                      className={`bg-gold-600 hover:bg-gold-700 text-white p-3 md:p-6 lg:p-8 rounded-full transition-all duration-300 transform hover:scale-105 shadow-2xl ${isPlaying && !videoEnded ? "opacity-0" : "opacity-100"
-                        }`}
+                      className={`bg-gold-600 hover:bg-gold-700 text-white p-3 md:p-6 lg:p-8 rounded-full transition-all duration-300 transform hover:scale-105 shadow-2xl ${
+                        isPlaying && !videoEnded ? "opacity-0" : "opacity-100"
+                      }`}
                       aria-label={isPlaying ? "Pause video" : "Play video"}
                     >
                       {isPlaying ? (
@@ -405,7 +440,12 @@ export default function DecolDesignShowroom() {
                       aria-label={isMuted ? "Unmute video" : "Mute video"}
                     >
                       {isMuted ? (
-                        <svg className="h-4 w-4 md:h-6 md:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <svg
+                          className="h-4 w-4 md:h-6 md:w-6"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                        >
                           <path
                             strokeLinecap="round"
                             strokeLinejoin="round"
@@ -420,7 +460,12 @@ export default function DecolDesignShowroom() {
                           />
                         </svg>
                       ) : (
-                        <svg className="h-4 w-4 md:h-6 md:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <svg
+                          className="h-4 w-4 md:h-6 md:w-6"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                        >
                           <path
                             strokeLinecap="round"
                             strokeLinejoin="round"
@@ -470,7 +515,11 @@ export default function DecolDesignShowroom() {
                       />
                     </svg>
                   </div>
-                  <h3 className={`font-bold text-base md:text-lg mb-2 ${themeClasses.text}`}>O maior Showroom do Norte do Paraná</h3>
+                  <h3
+                    className={`font-bold text-base md:text-lg mb-2 ${themeClasses.text}`}
+                  >
+                    O maior Showroom do Norte do Paraná
+                  </h3>
                   <p className={`${themeClasses.textMuted} text-xs md:text-sm`}>
                     espaço completo com peças personalizadas
                   </p>
@@ -482,7 +531,11 @@ export default function DecolDesignShowroom() {
                   <div className="w-10 h-10 md:w-12 md:h-12 bg-gold-100 rounded-full flex items-center justify-center mx-auto mb-3 md:mb-4">
                     <Star className="h-5 w-5 md:h-6 md:w-6 text-gold-600" />
                   </div>
-                  <h3 className={`font-bold text-base md:text-lg mb-2 ${themeClasses.text}`}>Loja dos Famosos</h3>
+                  <h3
+                    className={`font-bold text-base md:text-lg mb-2 ${themeClasses.text}`}
+                  >
+                    Loja dos Famosos
+                  </h3>
                   <p className={`${themeClasses.textMuted} text-xs md:text-sm`}>
                     já fizemos parte da casa de muitas celebridades!
                   </p>
@@ -494,9 +547,14 @@ export default function DecolDesignShowroom() {
                   <div className="w-10 h-10 md:w-12 md:h-12 bg-gold-100 rounded-full flex items-center justify-center mx-auto mb-3 md:mb-4">
                     <MapPin className="h-5 w-5 md:h-6 md:w-6 text-gold-600" />
                   </div>
-                  <h3 className={`font-bold text-base md:text-lg mb-2 ${themeClasses.text}`}>Londrina/PR</h3>
+                  <h3
+                    className={`font-bold text-base md:text-lg mb-2 ${themeClasses.text}`}
+                  >
+                    Londrina/PR
+                  </h3>
                   <p className={`${themeClasses.textMuted} text-xs md:text-sm`}>
-                    Acesso facilitado e amplo estacionamento exclusivo para clientes
+                    Acesso facilitado e amplo estacionamento exclusivo para
+                    clientes
                   </p>
                 </div>
               </div>
@@ -515,23 +573,30 @@ export default function DecolDesignShowroom() {
                   VISITE A LOJA DOS FAMOSOS EM LONDRINA
                 </h2>
                 <p className="text-base md:text-xl mb-6 md:mb-8 opacity-90">
-                  <strong>Localização privilegiada</strong> no Parque Industrial de Londrina com fácil acesso e
-                  estacionamento. Venha conhecer pessoalmente nossa coleção exclusiva.
+                  <strong>Localização privilegiada</strong> no Parque Industrial
+                  de Londrina com fácil acesso e estacionamento. Venha conhecer
+                  pessoalmente nossa coleção exclusiva.
                 </p>
 
                 <div className="space-y-3 md:space-y-4 mb-6 md:mb-8">
                   <div className="flex items-start gap-3 md:gap-4">
                     <MapPin className="h-5 w-5 md:h-6 md:w-6 flex-shrink-0 mt-0.5" />
                     <div>
-                      <p className="font-semibold text-base md:text-lg">R. Lupércio Pozato, 933</p>
-                      <p className="opacity-90 text-sm md:text-base">Parque Industrial, Londrina/PR - CEP 86084-450</p>
+                      <p className="font-semibold text-base md:text-lg">
+                        R. Lupércio Pozato, 933
+                      </p>
+                      <p className="opacity-90 text-sm md:text-base">
+                        Parque Industrial, Londrina/PR - CEP 86084-450
+                      </p>
                     </div>
                   </div>
 
                   <div className="flex items-start gap-3 md:gap-4">
                     <Clock className="h-5 w-5 md:h-6 md:w-6 flex-shrink-0 mt-0.5" />
                     <div>
-                      <p className="font-semibold text-sm md:text-base">Seg-Sex: 8h às 18h | Sáb: 8h às 16h</p>
+                      <p className="font-semibold text-sm md:text-base">
+                        Seg-Sex: 8h às 18h | Sáb: 8h às 16h
+                      </p>
                       <p className="opacity-90 text-sm">Domingo: Fechado</p>
                     </div>
                   </div>
@@ -539,7 +604,9 @@ export default function DecolDesignShowroom() {
                   <div className="flex items-start gap-3 md:gap-4">
                     <Phone className="h-5 w-5 md:h-6 md:w-6 flex-shrink-0 mt-0.5" />
                     <div>
-                      <p className="font-semibold text-base md:text-lg">(43) 99999-9999</p>
+                      <p className="font-semibold text-base md:text-lg">
+                        (43) 99120-1005
+                      </p>
                       <p className="opacity-90 text-sm">WhatsApp disponível</p>
                     </div>
                   </div>
@@ -580,9 +647,15 @@ export default function DecolDesignShowroom() {
                     className="rounded-xl md:rounded-2xl"
                   />
                   <div className="absolute bottom-3 md:bottom-6 left-3 md:left-6 bg-black/70 text-white p-3 md:p-4 rounded-lg">
-                    <h3 className="text-base md:text-lg font-bold mb-1">Decol Design</h3>
-                    <p className="text-xs md:text-sm opacity-90">A Loja dos Famosos</p>
-                    <p className="text-xs opacity-75">Parque Industrial - Londrina/PR</p>
+                    <h3 className="text-base md:text-lg font-bold mb-1">
+                      Decol Design
+                    </h3>
+                    <p className="text-xs md:text-sm opacity-90">
+                      A Loja dos Famosos
+                    </p>
+                    <p className="text-xs opacity-75">
+                      Parque Industrial - Londrina/PR
+                    </p>
                   </div>
                 </div>
               </div>
@@ -595,14 +668,19 @@ export default function DecolDesignShowroom() {
         <section className={`py-12 md:py-16 px-3 md:px-4 ${themeClasses.bg}`}>
           <div className="container mx-auto max-w-5xl">
             <div className="text-center mb-8 md:mb-12">
-              <h2 className={`text-2xl md:text-4xl font-bold mb-4 md:mb-6 ${themeClasses.text} font-playfair`}>
+              <h2
+                className={`text-2xl md:text-4xl font-bold mb-4 md:mb-6 ${themeClasses.text} font-playfair`}
+              >
                 POR QUE SOMOS A{" "}
                 <span className="bg-gradient-to-r from-yellow-400 via-amber-500 to-yellow-600 bg-clip-text text-transparent font-playfair drop-shadow-sm">
                   LOJA DOS FAMOSOS
                 </span>
               </h2>
-              <p className={`text-base md:text-xl ${themeClasses.textMuted} font-medium`}>
-                <strong>Especialistas absolutos</strong> em estofados de alto padrão e salas de jantar sob medida
+              <p
+                className={`text-base md:text-xl ${themeClasses.textMuted} font-medium`}
+              >
+                <strong>Especialistas absolutos</strong> em estofados de alto
+                padrão e salas de jantar sob medida
               </p>
             </div>
 
@@ -611,11 +689,23 @@ export default function DecolDesignShowroom() {
             >
               <div className="prose prose-lg max-w-none leading-relaxed">
                 <p className={`text-base md:text-lg mb-6 ${themeClasses.text}`}>
-                  <strong>Na Decol Design, sua casa reflete quem você é.</strong> Sala de estar e sala de jantar são
-                  onde as melhores memórias acontecem. Por isso, somos <strong>especialistas absolutos</strong> em dois
-                  pontos centrais do lar:
-                  <span className="text-gold-600 font-bold"> estofados de alto padrão</span> e
-                  <span className="text-gold-600 font-bold"> salas de jantar sob medida</span>.
+                  <strong>
+                    Na Decol Design, sua casa reflete quem você é.
+                  </strong>{" "}
+                  Sala de estar e sala de jantar são onde as melhores memórias
+                  acontecem. Por isso, somos{" "}
+                  <strong>especialistas absolutos</strong> em dois pontos
+                  centrais do lar:
+                  <span className="text-gold-600 font-bold">
+                    {" "}
+                    estofados de alto padrão
+                  </span>{" "}
+                  e
+                  <span className="text-gold-600 font-bold">
+                    {" "}
+                    salas de jantar sob medida
+                  </span>
+                  .
                 </p>
 
                 <div className="flex items-center justify-center md:gap-8 my-6 md:my-8">
@@ -644,46 +734,90 @@ export default function DecolDesignShowroom() {
                   </div> */}
 
                   <div>
-                    <h3 className={`text-lg md:text-xl font-bold mb-3 md:mb-4 ${themeClasses.text}`}>
+                    <h3
+                      className={`text-lg md:text-xl font-bold mb-3 md:mb-4 ${themeClasses.text}`}
+                    >
                       NOSSOS DIFERENCIAIS:
                     </h3>
-                    <ul className={`flex flex-col gap-6 ${themeClasses.textMuted}`}>
-                      <li className="flex items-center gap-2">
-                        <Check className="h-4 w-4 md:h-5 md:w-5 text-gold-600 flex-shrink-0" />
-                        <strong className="text-sm md:text-base">Especialistas em estofados e salas de jantar
-                        Nosso foco está nos dois ambientes mais marcantes do lar: sofás, poltronas, mesas e cadeiras que combinam conforto, estética e personalidade.</strong>
+                    <ul
+                      className={`flex flex-col gap-6 ${themeClasses.textMuted}`}
+                    >
+                      <li className="flex items-start gap-2">
+                        <Check className="h-4 w-4 md:h-5 md:w-5 text-gold-600 flex-shrink-0 mt-1" />
+                        <div>
+                          <h4 className="text-sm md:text-base font-bold text-gold-600 mb-1">
+                            Especialistas em estofados e salas de jantar
+                          </h4>
+                          <p className="text-sm md:text-base">
+                            Nosso foco está nos dois ambientes mais marcantes do
+                            lar: sofás, poltronas, mesas e cadeiras que combinam
+                            conforto, estética e personalidade.
+                          </p>
+                        </div>
                       </li>
-                      <li className="flex items-center gap-2">
-                        <Check className="h-4 w-4 md:h-5 md:w-5 text-gold-600 flex-shrink-0" />
-                        <strong className="text-sm md:text-base">Personalização total para se adaptar ao seu projeto
-                        Você escolhe os detalhes e nós cuidamos do acabamento! Os móveis podem ser personalizados em madeira, serralheria, pedra, tecidos e muito mais!</strong>
+                      <li className="flex items-start gap-2">
+                        <Check className="h-4 w-4 md:h-5 md:w-5 text-gold-600 flex-shrink-0 mt-1" />
+                        <div>
+                          <h4 className="text-sm md:text-base font-bold text-gold-600 mb-1">
+                            Personalização total para se adaptar ao seu projeto
+                          </h4>
+                          <p className="text-sm md:text-base">
+                            Você escolhe os detalhes e nós cuidamos do
+                            acabamento! Os móveis podem ser personalizados em
+                            madeira, serralheria, pedra, tecidos e muito mais!
+                          </p>
+                        </div>
                       </li>
-                      <li className="flex items-center gap-2">
-                        <Check className="h-4 w-4 md:h-5 md:w-5 text-gold-600 flex-shrink-0" />
-                        <strong className="text-sm md:text-base">Showroom com dois andares e estrutura completa
-                        Nosso espaço em Londrina oferece uma experiência imersiva, com ambientes cuidadosamente montados para inspirar e apresentar as possibilidades de um alto padrão real.</strong>
+                      <li className="flex items-start gap-2">
+                        <Check className="h-4 w-4 md:h-5 md:w-5 text-gold-600 flex-shrink-0 mt-1" />
+                        <div>
+                          <h4 className="text-sm md:text-base font-bold text-gold-600 mb-1">
+                            Showroom com dois andares e estrutura completa
+                          </h4>
+                          <p className="text-sm md:text-base">
+                            Nosso espaço em Londrina oferece uma experiência
+                            imersiva, com ambientes cuidadosamente montados para
+                            inspirar e apresentar as possibilidades de um alto
+                            padrão real.
+                          </p>
+                        </div>
                       </li>
-                      <li className="flex items-center gap-2">
-                        <Check className="h-4 w-4 md:h-5 md:w-5 text-gold-600 flex-shrink-0" />
-                        <strong className="text-sm md:text-base">Atendimento VIP e consultoria de verdade
-                        Aqui, cada cliente é atendido com tempo, escuta e olhar técnico. Seja com hora marcada ou em visita espontânea, oferecemos um atendimento que entende seu estilo e entrega exatamente o que você procura.</strong>
+                      <li className="flex items-start gap-2">
+                        <Check className="h-4 w-4 md:h-5 md:w-5 text-gold-600 flex-shrink-0 mt-1" />
+                        <div>
+                          <h4 className="text-sm md:text-base font-bold text-gold-600 mb-1">
+                            Atendimento VIP e consultoria de verdade
+                          </h4>
+                          <p className="text-sm md:text-base">
+                            Aqui, cada cliente é atendido com tempo, escuta e
+                            olhar técnico. Seja com hora marcada ou em visita
+                            espontânea, oferecemos um atendimento que entende
+                            seu estilo e entrega exatamente o que você procura.
+                          </p>
+                        </div>
                       </li>
                     </ul>
                   </div>
                 </div>
 
                 <p className={`text-base md:text-lg mb-6 ${themeClasses.text}`}>
-                  <strong>Trabalhamos sob medida e à pronta entrega.</strong> Nosso showroom em Londrina/PR reúne
-                  curadoria exclusiva com acabamentos impecáveis. Atendimento presencial ou com hora marcada, sempre
-                  focado no seu estilo e rotina.
+                  <strong>Trabalhamos sob medida e à pronta entrega.</strong>{" "}
+                  Nosso showroom em Londrina/PR reúne curadoria exclusiva com
+                  acabamentos impecáveis. Atendimento presencial ou com hora
+                  marcada, sempre focado no seu estilo e rotina.
                 </p>
 
                 <div className="text-center bg-gold-50 dark:bg-gold-900/20 p-6 md:p-8 rounded-xl mt-6 md:mt-8">
-                  <p className={`text-lg md:text-xl font-bold ${themeClasses.text} mb-2`}>
-                    <strong>Cada móvel é pensado para fazer parte da sua história.</strong>
+                  <p
+                    className={`text-lg md:text-xl font-bold ${themeClasses.text} mb-2`}
+                  >
+                    <strong>
+                      Cada móvel é pensado para fazer parte da sua história.
+                    </strong>
                   </p>
                   <p className="text-xl md:text-2xl font-bold bg-gradient-to-r from-yellow-400 via-amber-500 to-yellow-600 bg-clip-text text-transparent font-playfair drop-shadow-sm">
-                    Seu projeto começa aqui — e eleva seu viver a um novo padrão.
+                    Seu projeto começa aqui — e eleva seu viver a um novo
+                    padrão.
                   </p>
                 </div>
               </div>
@@ -724,7 +858,7 @@ export default function DecolDesignShowroom() {
                 size={isMobile ? "default" : "lg"}
                 className="w-full md:w-auto bg-gradient-to-r from-yellow-400 via-amber-500 to-yellow-600 hover:from-yellow-500 hover:via-amber-600 hover:to-yellow-700 text-black px-8 md:px-12 py-4 md:py-5 text-lg md:text-xl font-bold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
               >
-                SOLICITAR ORÇAMENTO VIP
+                COMPRAR AGORA
               </Button>
             </div>
             <p className="text-sm md:text-lg text-gray-200">
@@ -733,7 +867,7 @@ export default function DecolDesignShowroom() {
               </strong>{" "}
               • R. Lupércio Pozato, 933 - Parque Industrial •{" "}
               <strong className="bg-gradient-to-r from-yellow-400 to-amber-400 bg-clip-text text-transparent">
-                (43) 99999-9999
+                (43) 99120-1005
               </strong>
             </p>
           </div>
@@ -741,7 +875,11 @@ export default function DecolDesignShowroom() {
       </main>
 
       {/* Footer Mobile Otimizado */}
-      <footer className={`py-8 md:py-12 px-3 md:px-4 ${isDarkMode ? "bg-black" : "bg-gray-900"} text-white`}>
+      <footer
+        className={`py-8 md:py-12 px-3 md:px-4 ${
+          isDarkMode ? "bg-black" : "bg-gray-900"
+        } text-white`}
+      >
         <div className="container mx-auto max-w-6xl">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
             <div>
@@ -752,17 +890,19 @@ export default function DecolDesignShowroom() {
                 A Loja dos Famosos
               </p>
               <p className="text-gray-300 text-sm md:text-base">
-                <strong>Especialistas absolutos</strong> em estofados de alto padrão e salas de jantar sob medida em
-                Londrina/PR.
+                <strong>Especialistas absolutos</strong> em estofados de alto
+                padrão e salas de jantar sob medida em Londrina/PR.
               </p>
             </div>
 
             <div>
-              <h4 className="font-bold text-base md:text-lg mb-3 md:mb-4">CONTATO DIRETO</h4>
+              <h4 className="font-bold text-base md:text-lg mb-3 md:mb-4">
+                CONTATO DIRETO
+              </h4>
               <div className="space-y-2 md:space-y-3 text-gray-300">
                 <p className="flex items-center gap-2 md:gap-3 text-sm md:text-base">
                   <Phone className="h-4 w-4 md:h-5 md:w-5 text-gold-400 flex-shrink-0" />
-                  <strong>(43) 99999-9999</strong>
+                  <strong>(43) 99120-1005</strong>
                 </p>
                 <p className="flex items-center gap-2 md:gap-3 text-sm md:text-base">
                   <Mail className="h-4 w-4 md:h-5 md:w-5 text-gold-400 flex-shrink-0" />
@@ -770,13 +910,17 @@ export default function DecolDesignShowroom() {
                 </p>
                 <p className="flex items-start gap-2 md:gap-3 text-sm md:text-base">
                   <MapPin className="h-4 w-4 md:h-5 md:w-5 text-gold-400 flex-shrink-0 mt-0.5" />
-                  <strong>R. Lupércio Pozato, 933 - Parque Industrial, Londrina/PR</strong>
+                  <strong>
+                    R. Lupércio Pozato, 933 - Parque Industrial, Londrina/PR
+                  </strong>
                 </p>
               </div>
             </div>
 
             <div>
-              <h4 className="font-bold text-base md:text-lg mb-3 md:mb-4">HORÁRIO VIP</h4>
+              <h4 className="font-bold text-base md:text-lg mb-3 md:mb-4">
+                HORÁRIO VIP
+              </h4>
               <div className="space-y-1 md:space-y-2 text-gray-300 text-sm md:text-base">
                 <p>
                   <strong>Segunda a Sexta:</strong> 8h às 18h
@@ -796,7 +940,8 @@ export default function DecolDesignShowroom() {
 
           <div className="border-t border-gray-700 mt-8 md:mt-12 pt-6 md:pt-8 text-center">
             <p className="text-gray-400 text-xs md:text-sm">
-              © 2025 DECOL DESIGN - A Loja dos Famosos. Todos os direitos reservados.
+              © 2025 DECOL DESIGN - A Loja dos Famosos. Todos os direitos
+              reservados.
             </p>
           </div>
         </div>
@@ -822,8 +967,9 @@ export default function DecolDesignShowroom() {
             <div className="absolute inset-0 flex items-center justify-center bg-black/10">
               <button
                 onClick={togglePlay}
-                className={`bg-gold-600 hover:bg-gold-700 text-white p-6 md:p-8 rounded-full transition-all duration-300 transform hover:scale-105 shadow-2xl ${isPlaying && !videoEnded ? "opacity-0" : "opacity-100"
-                  }`}
+                className={`bg-gold-600 hover:bg-gold-700 text-white p-6 md:p-8 rounded-full transition-all duration-300 transform hover:scale-105 shadow-2xl ${
+                  isPlaying && !videoEnded ? "opacity-0" : "opacity-100"
+                }`}
                 aria-label={isPlaying ? "Pause video" : "Play video"}
               >
                 {isPlaying ? (
@@ -842,7 +988,12 @@ export default function DecolDesignShowroom() {
                 aria-label={isMuted ? "Unmute video" : "Mute video"}
               >
                 {isMuted ? (
-                  <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg
+                    className="h-6 w-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
                     <path
                       strokeLinecap="round"
                       strokeLinejoin="round"
@@ -857,7 +1008,12 @@ export default function DecolDesignShowroom() {
                     />
                   </svg>
                 ) : (
-                  <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg
+                    className="h-6 w-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
                     <path
                       strokeLinecap="round"
                       strokeLinejoin="round"
@@ -898,7 +1054,7 @@ export default function DecolDesignShowroom() {
             >
               <div className="flex justify-between items-center mb-4">
                 <h3 className="text-lg font-bold bg-gradient-to-r from-yellow-400 via-amber-500 to-yellow-600 bg-clip-text text-transparent font-playfair drop-shadow-sm">
-                  SOLICITAR ORÇAMENTO VIP
+                  COMPRE AGORA
                 </h3>
                 <button
                   onClick={closeModal}
@@ -912,7 +1068,10 @@ export default function DecolDesignShowroom() {
 
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
-                  <label htmlFor="drawer-name" className={`block text-sm font-bold ${themeClasses.text} mb-1`}>
+                  <label
+                    htmlFor="drawer-name"
+                    className={`block text-sm font-bold ${themeClasses.text} mb-1`}
+                  >
                     Nome Completo <span className="text-red-500">*</span>
                   </label>
                   <input
@@ -921,14 +1080,23 @@ export default function DecolDesignShowroom() {
                     name="name"
                     value={formData.name}
                     onChange={handleInputChange}
-                    className={`w-full border ${errors.name ? "border-red-500" : themeClasses.border} rounded-lg py-3 px-3 ${themeClasses.bg} ${themeClasses.text} focus:outline-none focus:ring-2 focus:ring-gold-500/50 text-base`}
+                    className={`w-full border ${
+                      errors.name ? "border-red-500" : themeClasses.border
+                    } rounded-lg py-3 px-3 ${themeClasses.bg} ${
+                      themeClasses.text
+                    } focus:outline-none focus:ring-2 focus:ring-gold-500/50 text-base`}
                     placeholder="Seu nome completo"
                   />
-                  {errors.name && <p className="text-red-500 text-xs mt-1">{errors.name}</p>}
+                  {errors.name && (
+                    <p className="text-red-500 text-xs mt-1">{errors.name}</p>
+                  )}
                 </div>
 
                 <div>
-                  <label htmlFor="drawer-whatsapp" className={`block text-sm font-bold ${themeClasses.text} mb-1`}>
+                  <label
+                    htmlFor="drawer-whatsapp"
+                    className={`block text-sm font-bold ${themeClasses.text} mb-1`}
+                  >
                     WhatsApp <span className="text-red-500">*</span>
                   </label>
                   <input
@@ -937,21 +1105,35 @@ export default function DecolDesignShowroom() {
                     name="whatsapp"
                     value={formData.whatsapp}
                     onChange={(e) => {
-                      const formatted = formatWhatsApp(e.target.value)
-                      setFormData((prev) => ({ ...prev, whatsapp: formatted }))
+                      const formatted = formatWhatsApp(e.target.value);
+                      setFormData((prev) => ({ ...prev, whatsapp: formatted }));
                       if (errors.whatsapp) {
-                        setErrors((prev) => ({ ...prev, whatsapp: "" }))
+                        setErrors((prev) => ({ ...prev, whatsapp: "" }));
                       }
                     }}
-                    className={`w-full border ${errors.whatsapp ? "border-red-500" : themeClasses.border} rounded-lg py-3 px-3 ${themeClasses.bg} ${themeClasses.text} focus:outline-none focus:ring-2 focus:ring-gold-500/50 text-base`}
+                    className={`w-full border ${
+                      errors.whatsapp ? "border-red-500" : themeClasses.border
+                    } rounded-lg py-3 px-3 ${themeClasses.bg} ${
+                      themeClasses.text
+                    } focus:outline-none focus:ring-2 focus:ring-gold-500/50 text-base`}
                     placeholder="(00) 00000-0000"
                   />
-                  {errors.whatsapp && <p className="text-red-500 text-xs mt-1">{errors.whatsapp}</p>}
+                  {errors.whatsapp && (
+                    <p className="text-red-500 text-xs mt-1">
+                      {errors.whatsapp}
+                    </p>
+                  )}
                 </div>
 
                 <div>
-                  <label htmlFor="drawer-email" className={`block text-sm font-bold ${themeClasses.text} mb-1`}>
-                    Email <span className={`${themeClasses.textMuted}`}>(opcional)</span>
+                  <label
+                    htmlFor="drawer-email"
+                    className={`block text-sm font-bold ${themeClasses.text} mb-1`}
+                  >
+                    Email{" "}
+                    <span className={`${themeClasses.textMuted}`}>
+                      (opcional)
+                    </span>
                   </label>
                   <input
                     type="email"
@@ -965,8 +1147,14 @@ export default function DecolDesignShowroom() {
                 </div>
 
                 <div>
-                  <label htmlFor="drawer-message" className={`block text-sm font-bold ${themeClasses.text} mb-1`}>
-                    Seu Projeto <span className={`${themeClasses.textMuted}`}>(opcional)</span>
+                  <label
+                    htmlFor="drawer-message"
+                    className={`block text-sm font-bold ${themeClasses.text} mb-1`}
+                  >
+                    Seu Projeto{" "}
+                    <span className={`${themeClasses.textMuted}`}>
+                      (opcional)
+                    </span>
                   </label>
                   <textarea
                     id="drawer-message"
@@ -988,7 +1176,10 @@ export default function DecolDesignShowroom() {
               </form>
             </div>
           ) : (
-            <div ref={modalRef} className={`${themeClasses.bg} rounded-2xl w-full max-w-lg p-8 shadow-2xl`}>
+            <div
+              ref={modalRef}
+              className={`${themeClasses.bg} rounded-2xl w-full max-w-lg p-8 shadow-2xl`}
+            >
               <div className="flex justify-between items-center mb-6">
                 <h3 className="text-2xl font-bold bg-gradient-to-r from-yellow-400 via-amber-500 to-yellow-600 bg-clip-text text-transparent font-playfair drop-shadow-sm">
                   SOLICITAR ORÇAMENTO VIP
@@ -1004,7 +1195,10 @@ export default function DecolDesignShowroom() {
 
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
-                  <label htmlFor="modal-name" className={`block text-sm font-bold ${themeClasses.text} mb-2`}>
+                  <label
+                    htmlFor="modal-name"
+                    className={`block text-sm font-bold ${themeClasses.text} mb-2`}
+                  >
                     Nome Completo <span className="text-red-500">*</span>
                   </label>
                   <input
@@ -1013,14 +1207,23 @@ export default function DecolDesignShowroom() {
                     name="name"
                     value={formData.name}
                     onChange={handleInputChange}
-                    className={`w-full border ${errors.name ? "border-red-500" : themeClasses.border} rounded-lg py-4 px-4 ${themeClasses.bg} ${themeClasses.text} focus:outline-none focus:ring-2 focus:ring-gold-500/50`}
+                    className={`w-full border ${
+                      errors.name ? "border-red-500" : themeClasses.border
+                    } rounded-lg py-4 px-4 ${themeClasses.bg} ${
+                      themeClasses.text
+                    } focus:outline-none focus:ring-2 focus:ring-gold-500/50`}
                     placeholder="Seu nome completo"
                   />
-                  {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name}</p>}
+                  {errors.name && (
+                    <p className="text-red-500 text-sm mt-1">{errors.name}</p>
+                  )}
                 </div>
 
                 <div>
-                  <label htmlFor="modal-whatsapp" className={`block text-sm font-bold ${themeClasses.text} mb-2`}>
+                  <label
+                    htmlFor="modal-whatsapp"
+                    className={`block text-sm font-bold ${themeClasses.text} mb-2`}
+                  >
                     WhatsApp <span className="text-red-500">*</span>
                   </label>
                   <input
@@ -1029,21 +1232,35 @@ export default function DecolDesignShowroom() {
                     name="whatsapp"
                     value={formData.whatsapp}
                     onChange={(e) => {
-                      const formatted = formatWhatsApp(e.target.value)
-                      setFormData((prev) => ({ ...prev, whatsapp: formatted }))
+                      const formatted = formatWhatsApp(e.target.value);
+                      setFormData((prev) => ({ ...prev, whatsapp: formatted }));
                       if (errors.whatsapp) {
-                        setErrors((prev) => ({ ...prev, whatsapp: "" }))
+                        setErrors((prev) => ({ ...prev, whatsapp: "" }));
                       }
                     }}
-                    className={`w-full border ${errors.whatsapp ? "border-red-500" : themeClasses.border} rounded-lg py-4 px-4 ${themeClasses.bg} ${themeClasses.text} focus:outline-none focus:ring-2 focus:ring-gold-500/50`}
+                    className={`w-full border ${
+                      errors.whatsapp ? "border-red-500" : themeClasses.border
+                    } rounded-lg py-4 px-4 ${themeClasses.bg} ${
+                      themeClasses.text
+                    } focus:outline-none focus:ring-2 focus:ring-gold-500/50`}
                     placeholder="(00) 00000-0000"
                   />
-                  {errors.whatsapp && <p className="text-red-500 text-sm mt-1">{errors.whatsapp}</p>}
+                  {errors.whatsapp && (
+                    <p className="text-red-500 text-sm mt-1">
+                      {errors.whatsapp}
+                    </p>
+                  )}
                 </div>
 
                 <div>
-                  <label htmlFor="modal-email" className={`block text-sm font-bold ${themeClasses.text} mb-2`}>
-                    Email <span className={`${themeClasses.textMuted}`}>(opcional)</span>
+                  <label
+                    htmlFor="modal-email"
+                    className={`block text-sm font-bold ${themeClasses.text} mb-2`}
+                  >
+                    Email{" "}
+                    <span className={`${themeClasses.textMuted}`}>
+                      (opcional)
+                    </span>
                   </label>
                   <input
                     type="email"
@@ -1057,8 +1274,14 @@ export default function DecolDesignShowroom() {
                 </div>
 
                 <div>
-                  <label htmlFor="modal-message" className={`block text-sm font-bold ${themeClasses.text} mb-2`}>
-                    Seu Projeto <span className={`${themeClasses.textMuted}`}>(opcional)</span>
+                  <label
+                    htmlFor="modal-message"
+                    className={`block text-sm font-bold ${themeClasses.text} mb-2`}
+                  >
+                    Seu Projeto{" "}
+                    <span className={`${themeClasses.textMuted}`}>
+                      (opcional)
+                    </span>
                   </label>
                   <textarea
                     id="modal-message"
@@ -1083,5 +1306,5 @@ export default function DecolDesignShowroom() {
         </div>
       )}
     </div>
-  )
+  );
 }
