@@ -934,7 +934,7 @@ export default function DecolDesignShowroom() {
                   <strong>Domingo:</strong> Fechado
                 </p>
                 <p className="text-gold-300 font-medium mt-3 md:mt-4 text-sm">
-                  <strong>Atendimento com hora marcada disponível</strong>
+                  <strong>Atendimento com horário agendado disponível</strong>
                 </p>
               </div>
             </div>
