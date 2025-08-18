@@ -21,6 +21,7 @@ import { Button } from "@/components/ui/button";
 import { useState, useRef, useEffect, useCallback } from "react";
 import { useMobile } from "@/hooks/use-mobile";
 import ProductsSection from "@/components/productsSection";
+import VideosFamososSection from "@/components/videosFamososSection";
 
 export default function DecolDesignShowroom() {
   const [isPlaying, setIsPlaying] = useState(true);
@@ -563,6 +564,7 @@ export default function DecolDesignShowroom() {
         </section>
 
         <ProductsSection />
+        <VideosFamososSection themeClasses={themeClasses} />
 
         {/* Localização Mobile Otimizada */}
         <section className="py-12 md:py-16 px-3 md:px-4 bg-gold-600 text-white">
@@ -831,7 +833,7 @@ export default function DecolDesignShowroom() {
           <div className="absolute inset-0 bg-gradient-to-r from-yellow-600/10 via-amber-500/20 to-yellow-600/10 opacity-30"></div>
           <div className="container mx-auto max-w-5xl text-center relative z-10">
             <h2 className="text-2xl md:text-5xl font-bold mb-6 md:mb-8 bg-gradient-to-r from-yellow-300 via-yellow-400 to-amber-400 bg-clip-text text-transparent font-playfair drop-shadow-lg">
-              VISITE A LOJA DOS FAMOSOS AGORA
+              VENHA PARA A LOJA DOS FAMOSOS
             </h2>
             <p className="text-base md:text-2xl mb-8 md:mb-12 text-gray-100 font-medium">
               <strong className="bg-gradient-to-r from-yellow-400 to-amber-400 bg-clip-text text-transparent">
