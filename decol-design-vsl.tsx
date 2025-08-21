@@ -319,7 +319,7 @@ export default function DecolDesignShowroom() {
                   </div>
                   <div className="flex items-center gap-1 text-gold-600">
                     <Phone className="h-3 w-3" />
-                    <span className="font-medium">(43) 99999-9999</span>
+                    <span className="font-medium">(43) 99120-1005</span>
                   </div>
                 </div>
               )}
@@ -349,9 +349,9 @@ export default function DecolDesignShowroom() {
               <h1
                 className={`text-2xl md:text-6xl font-bold mb-4 md:mb-2  leading-tight`}
               >
-                <h1 className="bg-gradient-to-r from-yellow-400 via-yellow-500  to-yellow-600 bg-clip-text text-transparent font-playfair drop-shadow-sm">
+                <div className="bg-gradient-to-r from-yellow-400 via-yellow-500  to-yellow-600 bg-clip-text text-transparent font-playfair drop-shadow-sm">
                   DECOL DESIGN
-                </h1>
+                </div>
 
                 <span className="text-lg md:text-4xl bg-gradient-to-r from-amber-400 via-yellow-500 to-amber-600 bg-clip-text text-transparent font-playfair">
                   A Loja dos Famosos
@@ -597,7 +597,7 @@ export default function DecolDesignShowroom() {
                     <Clock className="h-5 w-5 md:h-6 md:w-6 flex-shrink-0 mt-0.5" />
                     <div>
                       <p className="font-semibold text-sm md:text-base">
-                        Seg-Sex: 8h às 18h | Sáb: 8h às 16h
+                        Seg-Sex: 8:30h às 18h | Sáb: 8:30h às 14h
                       </p>
                       <p className="opacity-90 text-sm">Domingo: Fechado</p>
                     </div>
@@ -925,10 +925,10 @@ export default function DecolDesignShowroom() {
               </h4>
               <div className="space-y-1 md:space-y-2 text-gray-300 text-sm md:text-base">
                 <p>
-                  <strong>Segunda a Sexta:</strong> 8h às 18h
+                  <strong>Segunda a Sexta:</strong> 8:30h às 18h
                 </p>
                 <p>
-                  <strong>Sábado:</strong> 8h às 16h
+                  <strong>Sábado:</strong> 8:30h às 14h
                 </p>
                 <p>
                   <strong>Domingo:</strong> Fechado
