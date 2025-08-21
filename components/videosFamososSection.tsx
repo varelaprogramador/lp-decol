@@ -164,7 +164,7 @@ export default function VideosFamososSection({
           <button
             onClick={() =>
               window.open(
-                "https://wa.me/5543991201005?text=Olá! Vi o site da Decol Design e gostaria de conhecer os estofados e salas de jantar. Quando posso visitar a loja?",
+                "https://wa.me/5543991201005?text=Olá, preciso de um atendimento VIP!🤩✨",
                 "_blank"
               )
             }

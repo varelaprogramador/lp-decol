@@ -90,10 +90,10 @@ export default function DecolDesignShowroom() {
     document.body.style.overflow = "auto";
   };
 
-  const openModal = () => {
-    setIsModalOpen(true);
-    document.body.style.overflow = "hidden";
-  };
+  // const openModal = () => {
+  //   setIsModalOpen(true);
+  //   document.body.style.overflow = "hidden";
+  // };
 
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -257,7 +257,7 @@ export default function DecolDesignShowroom() {
 
   const openWhatsApp = () => {
     window.open(
-      "https://wa.me/5543991201005?text=Olá! Vi o site da Decol Design e gostaria de conhecer os estofados e salas de jantar. Quando posso visitar a loja?",
+      "https://wa.me/5543991201005?text=Olá, preciso de um atendimento VIP! 🤩✨",
       "_blank"
     );
   };
@@ -856,7 +856,7 @@ export default function DecolDesignShowroom() {
                 FALAR AGORA NO WHATSAPP
               </Button>
               <Button
-                onClick={openModal}
+                onClick={openWhatsApp}
                 size={isMobile ? "default" : "lg"}
                 className="w-full md:w-auto bg-gradient-to-r from-yellow-400 via-amber-500 to-yellow-600 hover:from-yellow-500 hover:via-amber-600 hover:to-yellow-700 text-black px-8 md:px-12 py-4 md:py-5 text-lg md:text-xl font-bold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
               >
