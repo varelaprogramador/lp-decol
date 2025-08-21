@@ -256,10 +256,9 @@ export default function DecolDesignShowroom() {
   };
 
   const openWhatsApp = () => {
-    window.open(
-      "https://wa.me/5543991201005?text=Olá, preciso de um atendimento VIP! 🤩✨",
-      "_blank"
-    );
+    const message = "Olá, preciso de um atendimento VIP! 🤩✨";
+    const encodedMessage = encodeURIComponent(message);
+    window.open(`https://wa.me/5543991201005?text=${encodedMessage}`, "_blank");
   };
 
   const openMaps = () => {

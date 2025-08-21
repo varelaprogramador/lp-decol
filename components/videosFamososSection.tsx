@@ -162,12 +162,14 @@ export default function VideosFamososSection({
             da nossa clientela VIP!
           </p>
           <button
-            onClick={() =>
+            onClick={() => {
+              const message = "Olá, preciso de um atendimento VIP! 🤩✨";
+              const encodedMessage = encodeURIComponent(message);
               window.open(
-                "https://wa.me/5543991201005?text=Olá, preciso de um atendimento VIP!🤩✨",
+                `https://wa.me/5543991201005?text=${encodedMessage}`,
                 "_blank"
-              )
-            }
+              );
+            }}
             className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white px-6 md:px-8 py-3 md:py-4 text-base md:text-lg font-bold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
           >
             FALAR COM A LOJA DOS FAMOSOS
