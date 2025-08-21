@@ -349,11 +349,31 @@ export default function DecolDesignShowroom() {
               <h1
                 className={`text-2xl md:text-6xl font-bold mb-4 md:mb-2  leading-tight`}
               >
-                <div className="bg-gradient-to-r from-yellow-400 via-yellow-500  to-yellow-600 bg-clip-text text-transparent font-playfair drop-shadow-sm">
+                <div
+                  className="font-playfair drop-shadow-sm"
+                  style={{
+                    background:
+                      "linear-gradient(to right, #facc15, #eab308, #d97706)",
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                    backgroundClip: "text",
+                    color: "transparent",
+                  }}
+                >
                   DECOL DESIGN
                 </div>
 
-                <span className="text-lg md:text-4xl bg-gradient-to-r from-amber-400 via-yellow-500 to-amber-600 bg-clip-text text-transparent font-playfair">
+                <span
+                  className="text-lg md:text-4xl font-playfair"
+                  style={{
+                    background:
+                      "linear-gradient(to right, #f59e0b, #eab308, #d97706)",
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                    backgroundClip: "text",
+                    color: "transparent",
+                  }}
+                >
                   A Loja dos Famosos
                 </span>
               </h1>
@@ -389,7 +409,17 @@ export default function DecolDesignShowroom() {
             {/* Vídeo com Expansão */}
             <div className="mb-12 md:mb-16">
               <div className="text-center mb-6 md:mb-8 px-3">
-                <h2 className="text-xl md:text-4xl font-bold mb-3 md:mb-4 bg-gradient-to-r from-yellow-400 via-amber-500 to-yellow-600 bg-clip-text text-transparent font-playfair drop-shadow-sm">
+                <h2
+                  className="text-xl md:text-4xl font-bold mb-3 md:mb-4 font-playfair drop-shadow-sm"
+                  style={{
+                    background:
+                      "linear-gradient(to right, #facc15, #f59e0b, #d97706)",
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                    backgroundClip: "text",
+                    color: "transparent",
+                  }}
+                >
                   CONHEÇA NOSSO SHOWROOM EXCLUSIVO
                 </h2>
                 <p
@@ -674,7 +704,17 @@ export default function DecolDesignShowroom() {
                 className={`text-2xl md:text-4xl font-bold mb-4 md:mb-6 ${themeClasses.text} font-playfair`}
               >
                 POR QUE SOMOS A{" "}
-                <span className="bg-gradient-to-r from-yellow-400 via-amber-500 to-yellow-600 bg-clip-text text-transparent font-playfair drop-shadow-sm">
+                <span
+                  className="font-playfair drop-shadow-sm"
+                  style={{
+                    background:
+                      "linear-gradient(to right, #facc15, #f59e0b, #d97706)",
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                    backgroundClip: "text",
+                    color: "transparent",
+                  }}
+                >
                   LOJA DOS FAMOSOS
                 </span>
               </h2>
@@ -817,7 +857,17 @@ export default function DecolDesignShowroom() {
                       Cada móvel é pensado para fazer parte da sua história.
                     </strong>
                   </p>
-                  <p className="text-xl md:text-2xl font-bold bg-gradient-to-r from-yellow-400 via-amber-500 to-yellow-600 bg-clip-text text-transparent font-playfair drop-shadow-sm">
+                  <p
+                    className="text-xl md:text-2xl font-bold font-playfair drop-shadow-sm"
+                    style={{
+                      background:
+                        "linear-gradient(to right, #facc15, #f59e0b, #d97706)",
+                      WebkitBackgroundClip: "text",
+                      WebkitTextFillColor: "transparent",
+                      backgroundClip: "text",
+                      color: "transparent",
+                    }}
+                  >
                     Seu projeto começa aqui — e eleva seu viver a um novo
                     padrão.
                   </p>
@@ -832,16 +882,42 @@ export default function DecolDesignShowroom() {
           {/* Efeito de brilho dourado de fundo */}
           <div className="absolute inset-0 bg-gradient-to-r from-yellow-600/10 via-amber-500/20 to-yellow-600/10 opacity-30"></div>
           <div className="container mx-auto max-w-5xl text-center relative z-10">
-            <h2 className="text-2xl md:text-5xl font-bold mb-6 md:mb-8 bg-gradient-to-r from-yellow-300 via-yellow-400 to-amber-400 bg-clip-text text-transparent font-playfair drop-shadow-lg">
+            <h2
+              className="text-2xl md:text-5xl font-bold mb-6 md:mb-8 font-playfair drop-shadow-lg"
+              style={{
+                background:
+                  "linear-gradient(to right, #fde047, #facc15, #f59e0b)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                backgroundClip: "text",
+                color: "transparent",
+              }}
+            >
               VENHA PARA A LOJA DOS FAMOSOS
             </h2>
             <p className="text-base md:text-2xl mb-8 md:mb-12 text-gray-100 font-medium">
-              <strong className="bg-gradient-to-r from-yellow-400 to-amber-400 bg-clip-text text-transparent">
+              <strong
+                style={{
+                  background: "linear-gradient(to right, #facc15, #f59e0b)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  backgroundClip: "text",
+                  color: "transparent",
+                }}
+              >
                 Coleção exclusiva
               </strong>{" "}
               de estofados de alto padrão e salas de jantar sob medida.
               <br />
-              <strong className="bg-gradient-to-r from-yellow-400 to-amber-400 bg-clip-text text-transparent">
+              <strong
+                style={{
+                  background: "linear-gradient(to right, #facc15, #f59e0b)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  backgroundClip: "text",
+                  color: "transparent",
+                }}
+              >
                 Atendimento VIP
               </strong>{" "}
               que eleva seu viver a um novo padrão.
@@ -864,11 +940,27 @@ export default function DecolDesignShowroom() {
               </Button>
             </div>
             <p className="text-sm md:text-lg text-gray-200">
-              <strong className="bg-gradient-to-r from-yellow-400 to-amber-400 bg-clip-text text-transparent">
+              <strong
+                style={{
+                  background: "linear-gradient(to right, #facc15, #f59e0b)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  backgroundClip: "text",
+                  color: "transparent",
+                }}
+              >
                 Londrina/PR
               </strong>{" "}
               • R. Lupércio Pozato, 933 - Parque Industrial •{" "}
-              <strong className="bg-gradient-to-r from-yellow-400 to-amber-400 bg-clip-text text-transparent">
+              <strong
+                style={{
+                  background: "linear-gradient(to right, #facc15, #f59e0b)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  backgroundClip: "text",
+                  color: "transparent",
+                }}
+              >
                 (43) 99120-1005
               </strong>
             </p>
@@ -885,10 +977,29 @@ export default function DecolDesignShowroom() {
         <div className="container mx-auto max-w-6xl">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
             <div>
-              <h3 className="text-xl md:text-2xl font-bold mb-3 md:mb-4 bg-gradient-to-r from-yellow-400 via-amber-500 to-yellow-600 bg-clip-text text-transparent font-playfair drop-shadow-sm">
+              <h3
+                className="text-xl md:text-2xl font-bold mb-3 md:mb-4 font-playfair drop-shadow-sm"
+                style={{
+                  background:
+                    "linear-gradient(to right, #facc15, #f59e0b, #d97706)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  backgroundClip: "text",
+                  color: "transparent",
+                }}
+              >
                 DECOL DESIGN
               </h3>
-              <p className="bg-gradient-to-r from-yellow-300 to-amber-400 bg-clip-text text-transparent mb-3 md:mb-4 font-semibold">
+              <p
+                className="mb-3 md:mb-4 font-semibold"
+                style={{
+                  background: "linear-gradient(to right, #fde047, #f59e0b)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  backgroundClip: "text",
+                  color: "transparent",
+                }}
+              >
                 A Loja dos Famosos
               </p>
               <p className="text-gray-300 text-sm md:text-base">
@@ -1055,7 +1166,17 @@ export default function DecolDesignShowroom() {
               className={`${themeClasses.bg} rounded-t-2xl w-full max-h-[90vh] overflow-y-auto p-4 shadow-2xl`}
             >
               <div className="flex justify-between items-center mb-4">
-                <h3 className="text-lg font-bold bg-gradient-to-r from-yellow-400 via-amber-500 to-yellow-600 bg-clip-text text-transparent font-playfair drop-shadow-sm">
+                <h3
+                  className="text-lg font-bold font-playfair drop-shadow-sm"
+                  style={{
+                    background:
+                      "linear-gradient(to right, #facc15, #f59e0b, #d97706)",
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                    backgroundClip: "text",
+                    color: "transparent",
+                  }}
+                >
                   COMPRE AGORA
                 </h3>
                 <button
@@ -1183,7 +1304,17 @@ export default function DecolDesignShowroom() {
               className={`${themeClasses.bg} rounded-2xl w-full max-w-lg p-8 shadow-2xl`}
             >
               <div className="flex justify-between items-center mb-6">
-                <h3 className="text-2xl font-bold bg-gradient-to-r from-yellow-400 via-amber-500 to-yellow-600 bg-clip-text text-transparent font-playfair drop-shadow-sm">
+                <h3
+                  className="text-2xl font-bold font-playfair drop-shadow-sm"
+                  style={{
+                    background:
+                      "linear-gradient(to right, #facc15, #f59e0b, #d97706)",
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                    backgroundClip: "text",
+                    color: "transparent",
+                  }}
+                >
                   SOLICITAR ORÇAMENTO VIP
                 </h3>
                 <button
