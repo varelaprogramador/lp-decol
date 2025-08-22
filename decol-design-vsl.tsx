@@ -1018,7 +1018,7 @@ export default function DecolDesignShowroom() {
                 </p>
                 <p className="flex items-center gap-2 md:gap-3 text-sm md:text-base">
                   <Mail className="h-4 w-4 md:h-5 md:w-5 text-gold-400 flex-shrink-0" />
-                  contato@decoldesign.com.br
+                  Admdecoldesign@hotmail.com
                 </p>
                 <p className="flex items-start gap-2 md:gap-3 text-sm md:text-base">
                   <MapPin className="h-4 w-4 md:h-5 md:w-5 text-gold-400 flex-shrink-0 mt-0.5" />
