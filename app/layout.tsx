@@ -66,6 +66,24 @@ export default function RootLayout({
           {children}
         </ThemeProvider>
 
+        {/* Google Tag Manager */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=AW-11447632957"
+          strategy="afterInteractive"
+        />
+        <Script
+          id="google-analytics"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'AW-11447632957');
+            `,
+          }}
+        />
+
         {/* Facebook Pixel */}
         <Script
           id="facebook-pixel"
